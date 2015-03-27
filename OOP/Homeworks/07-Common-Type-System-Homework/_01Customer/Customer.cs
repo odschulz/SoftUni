@@ -218,6 +218,11 @@ public class Customer : ICloneable, IComparable<Customer>
 
     public override string ToString()
     {
+        this.PermanentAddress = permanentAddress;
+        this.MobilePhone = mobilePhone;
+        this.Email = email;
+        this.Payments = payments;
+
         StringBuilder result = new StringBuilder();
         result.AppendLine("Name: " + this.FirstName + " " + this.MiddleName + " " + this.LastName);
         result.AppendLine("ID: " + this.Id);
