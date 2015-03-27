@@ -1,0 +1,237 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+body {
+    font-family: 'PT Sans', Tahoma, sans-serif;
+    font-size: 14px;
+    overflow: auto;
+}
+
+header {
+    background-color: #234465;
+    height: 91px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+    #wrapper {
+        background: #234465;
+        width: 1170px;
+        height: 70px;
+        /*padding: 0 15px;*/
+        margin: 0 auto;
+        text-transform: uppercase;
+        color: #ffffff;
+        box-sizing: border-box;
+
+    }
+
+        #logo {
+            display: inline-block;
+            background: url("Images/logo.png") no-repeat;
+            width: 255px;
+            height: 65px;
+            position: relative;
+            float: left;
+            margin: 0px 0px 0px 15px;
+        }
+
+                #beta {
+                    font-size: 8pt !important;
+                    text-transform: lowercase !important;
+                    position: absolute;
+                    right: 3px;
+                    top: 6px;
+                }
+
+        #navWrapper {
+            float: right;
+            width: 75%;
+            box-sizing: border-box;
+        }
+
+            #userWrapper {
+                width: 100%;
+                height: 35px;
+                box-sizing: border-box;
+            }
+
+                #userSection {
+                    float: right;
+                    box-sizing: border-box;
+                    vertical-align: bottom;
+                }
+
+                    #notification {
+                        background: url("Images/notificationsIcon.png") no-repeat 13px 4px;
+                        width: 35px;
+                        display: inline-block;
+                        box-sizing: border-box;
+                        padding: 5px 0px;
+                        vertical-align: bottom;
+                        margin: 0px 21px 0px 0px;
+                    }
+
+                    #notification:hover {
+                        text-decoration: underline;
+                    }
+
+
+                    #user {
+                        width: 59px;
+                        display: inline-block;
+                        text-transform: uppercase;
+                        color: #ffffff;
+                        box-sizing: border-box;
+                        vertical-align: bottom;
+                        margin: 0px 0px 4px 0px;
+                        font-size: 15px;
+                    }
+
+
+                    #user:hover {
+                        text-decoration: underline;
+                        cursor: pointer ;
+                    }
+
+                        .caret {
+                            display: inline-block;
+                            margin-left: 5px;
+                            vertical-align: middle;
+                            border-top: 4px solid;
+                            border-right: 4px solid transparent;
+                            border-left: 4px solid transparent;
+                        }
+
+                        .submenu {
+                            background-color: #234465;
+                            border-radius: 0 0 4px 4px;
+                            display: none;
+                            opacity: 0;
+                            position: absolute;
+                            width: 300px;
+                            visibility: hidden;
+                            text-align: left;
+                            text-transform: capitalize !important;
+                            padding: 5px 0 5px 0;
+                        }
+
+                            .submenu ul > li {
+                                display: block;
+                                text-align: left;
+                                padding: 8px 0px 8px 10px;
+                                text-decoration: none;
+                                width: 290px;
+                                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                            }
+
+                            .submenu > ul > li:hover {
+                                background-color: #FF9C00;
+                            }
+
+                            .drop-down:hover > div.submenu {
+                                display: flex;
+                                opacity: 1;
+                                visibility: visible;
+                            }
+
+                    #searchForm {
+                        display: inline-block;
+                        background-color: white;
+                        box-sizing: border-box;
+                        margin: 3px 14px 0px 0px;
+                        border-radius: 5px;
+                    }
+
+                        #searchBar {
+                            height: 32px;
+                            width: 223px;
+                            border: none;
+                            background: transparent;
+                            margin: 0;
+                            box-sizing: border-box;
+                            padding-left: 8px;
+                        }
+
+                        #searchButton {
+                            background-image: url("Images/magn-glass.png");
+                            background-repeat: no-repeat;
+                            background-position: 7px 8px;
+                            background-color: transparent;
+                            border: none;
+                            border-left: 1px solid #D5D5D5;
+                            height: 32px;
+                            width: 33px;
+                            margin: 0px 0px 0px 0px;
+                            padding: 0;
+                            cursor: pointer;
+                            box-sizing: border-box;
+
+                        }
+
+                        #searchBar:focus, #searchButton:focus {
+                            outline: none;
+                        }
+
+            #menuWrapper {
+                width: 100%;
+                height: 30px;
+                box-sizing: border-box;
+                padding: 9px 0px 0px 0px;
+
+            }
+
+                #navMenu {
+                    float: right;
+                    box-sizing: border-box;
+                }
+
+                    #navMenu > li {
+                        display: inline-block;
+                        padding: 5px 5px 5px 5px;
+                        margin: 0px 8px 0px 20px;
+                    }
+
+                    /*nav >ul#nav-menu {*/
+                        /*text-align: right;*/
+                    /*}*/
+
+                    li > .submenu {
+                        margin-left: -6px;
+                    }
+
+                    nav > ul > li:hover {
+                        cursor: pointer;
+                    }
+
+                    nav > ul > li:hover {
+                        background-color: #428bca;
+                        border-radius: 3px;
+                    }

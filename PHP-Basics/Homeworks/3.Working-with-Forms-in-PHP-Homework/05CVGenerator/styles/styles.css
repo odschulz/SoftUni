@@ -1,0 +1,59 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup, var,
+b, i, dl, dt, dd, ol, ul, li, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+  display: block;
+}
+
+div, header, h1, h2, h3, h4, h5, h6, img, span, nav, ul, li, a, aside, section, article, footer {
+  box-sizing: border-box;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-weight: 100;
+}
+
+form {
+	width: 550px;
+}
+
+	form > fieldset > * {
+		margin-bottom: 2px;
+	}
+
+		#personal-information > input, #personal-information > select {
+	    	display: block;
+		}
+
+.errorMessages {
+	background: red;
+	color: white;
+	width: 550px;
+	margin: 5px 0;
+}
+
+table, tr, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 2px;
+	padding: 2px;
+}

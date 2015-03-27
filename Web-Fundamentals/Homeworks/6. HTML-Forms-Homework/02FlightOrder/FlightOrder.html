@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="FlightOrder.css"/>
+        <title>Flight Order</title>
+	</head>
+<body>
+<div>
+    <form method="post" action="#">
+        <fieldset>
+            <legend>Flight Order</legend>
+            <div id="fromDiv">
+                <label for="fromCity">From</label>
+                <select name="from" id="fromCity">
+                    <option selected="selected">enter a city</option>
+                    <option value="par">Paris</option>
+                    <option value="ldn">London</option>
+                    <option value="ny">New York</option>
+                    <option value="sf">Sofia</option>
+                </select>
+            </div>
+
+            <div id="toDiv">
+                <label for="toCity">To</label>
+                <select name="to" id="toCity">
+                    <option selected="selected">enter a city</option>
+                    <option value="par">Paris</option>
+                    <option value="ldn">London</option>
+                    <option value="ny">New York</option>
+                    <option value="sf">Sofia</option>
+                </select>
+            </div>
+            <div id="directsDiv">
+                <input type="checkbox" id="directs"/>
+                <label for="directs">Prefer directs</label>
+            </div>
+            <div class="dateDiv">
+                <label for="depDate">Departure Date</label>
+                <input type="date" id="depDate" class="date"/>
+            </div>
+            <div class="timeDiv">
+                <label for="depTime">Time Interval</label>
+                <input type="time" id="depTime" class="time"/>
+                <input type="time" class="time"/>
+            </div>
+            <div class="dateDiv">
+                <label for="retDate">Return Date</label>
+                <input type="date" id="retDate" class="date"/>
+            </div>
+            <div class="timeDiv">
+                <label for="retTime">Time Interval</label>
+                <input type="time" id="retTime" class="time"/>
+                <input type="time" class="time"/>
+            </div>
+            <div id="childrenDiv">
+                <label for="12+">12+</label>
+                <label for="2-12">2-12</label>
+                <label for="0-2">0-2</label>
+                <input type="number" id="12+" class="number" value="0" min="0"/>
+                <input type="number" id="2-12" class="number" value="0" min="0"/>
+                <input type="number" id="0-2"  class="number" value="0" min="0"/>
+            </div>
+            <div id="travelClassDiv">
+                <label for="travelClass">Choose class</label>
+                <select name="from" id="travelClass">
+                    <option selected="selected" value="econC">Economy</option>
+                    <option value="firstC">First</option>
+                    <option value="businessC">Business</option>
+                </select>
+            </div>
+            <div id="buttonDiv">
+                <input type="submit" value="Search" id="searchButton"/>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

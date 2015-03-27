@@ -1,0 +1,10 @@
+For Linux:
+1. Open Terminal
+2. Navigate to the directory of the java file you wish to complie. Example: cd workspace/Intro-Java-Homework/src$/
+3. Type the command 'javac' and the file name, followed by the file Extension.
+Example: javac SumTwoNumbers.java
+4. To execute the program, enter the command 'java' followed by the file name.
+Example: java SumTwoNumbers
+
+For Windows:
+make sure that javac.exe is included in the Windows executable files path and repeat the same steps, using Command Prompt.

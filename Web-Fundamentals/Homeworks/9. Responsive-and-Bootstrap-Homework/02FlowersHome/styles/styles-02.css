@@ -1,0 +1,250 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+div, header, h1, h2, img, span, nav, ul, li, a, aside, section, article, footer {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background: url(../images/background-flowers.jpg);
+    font-family: tahoma, verdana, arial, sans-serif;
+}
+
+
+
+#wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+#wrapper > header, aside, section, footer {
+    border: 2px solid black;
+    background: rgba(255, 230, 230, 0.9);
+}
+
+
+
+#wrapper > header  {
+    flex: 1 100%;
+    padding: 15px 15px 20px;
+    margin-bottom: 30px;
+}
+
+    #wrapper > header > h1 > a {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 15px;
+    }
+
+        #wrapper > header h1 a img {
+            width: 240px;
+        }
+
+        #wrapper > header h1 a span {
+            font-size: 3.5em;
+            color: #000000;
+        }
+
+    #wrapper > header > nav > ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        #wrapper > header > nav > ul > li {
+            list-style: none;
+            border: 1px solid black;
+            background-color: #E72C7D;
+            width: 150px;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 10px;
+        }
+
+        #wrapper > header > nav > ul > li:last-of-type {
+            margin-right: 0px !important;
+        }
+
+            #wrapper > header > nav > ul > li > a {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.2em;
+            }
+
+
+aside.left {
+    flex: 1;
+    order: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+    aside.left ul {
+        padding: 15px 10px;
+    }
+
+    aside.left ul li {
+        list-style: none;
+        line-height: 23px;
+    }
+
+        aside.left ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 1.2em;
+        }
+
+            aside.left ul li a img {
+                vertical-align: middle;
+            }
+
+
+
+#wrapper > section {
+    flex: 3;
+    order: 2;
+    overflow: auto;
+    padding: 15px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+    #wrapper > section header h1 {
+        font-size:  2.1em;
+    }
+
+    #wrapper > section div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+        #wrapper > section div img {
+            width: 25%;
+            height: 25%;
+            padding: 0px 5px 5px 0px;
+        }
+
+
+
+aside.right {
+    flex: 1;
+    order: 3;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+    aside.right ul {
+        padding: 15px 10px;
+    }
+
+        aside.right ul li {
+            list-style: none;
+            font-size: 1.2em;
+        }
+
+
+footer {
+    flex: 1 100%;
+    order: 4;
+}
+
+    footer h2 {
+        font-size: 1.5em;
+        line-height: 60px;
+        text-align: center;
+    }
+        footer a {
+            color: #000000;
+        }
+
+
+@media screen and (max-width: 960px) {
+
+    #wrapper > section div img {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+
+    #wrapper > header > nav > ul {
+        justify-content: space-between;
+    }
+
+        #wrapper > header > nav > ul li {
+            margin: 0;
+        }
+
+    #wrapper > section {
+        flex: 1 100%;
+        order: 1;
+        margin-right: 0;
+    }
+
+    aside.left {
+        flex: 1 100%;
+        order: 2;
+        margin-right: 0;
+    }
+
+    aside.right {
+        flex: 1 100%;
+        order: 3;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #wrapper > header > h1 > a {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #wrapper > header h1 a span {
+        flex: 1 100%;
+        text-align: center;
+    }
+
+    #wrapper > header > nav > ul {
+        flex-wrap: wrap;
+    }
+
+    #wrapper > header > nav > ul li {
+        justify-content: inherit;
+        flex: 1 100%;
+    }
+
+    #wrapper > section div img {
+        width: 50%;
+    }
+}
+
+

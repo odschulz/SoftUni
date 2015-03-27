@@ -1,0 +1,24 @@
+<html>
+<body>
+  <div>first div</div>
+  <div>second div</div>
+  <div class="empty"></div>
+  <div>third div<div>inner div</div></div>
+  <ul id="result"></ul>
+  <script>
+	var divArr = document.getElementsByTagName('div');
+	var ul = document.getElementById('result');
+	for(var i = 0; i < divArr.length - 1; i++) {
+		if(hasClass(divArr[i], 'empty')) {
+			continue;
+		}
+		var li = document.createElement('li');
+		li.innerHTML = divArr[i].innerHTML;
+		ul.appendChild(li);
+	}
+	function hasClass(el, clas) {
+		return el.className && new RegExp("(\\s|^)" + clas + "(\\s|$)").test(el.className);
+	}
+  </script>
+</body>
+</html>

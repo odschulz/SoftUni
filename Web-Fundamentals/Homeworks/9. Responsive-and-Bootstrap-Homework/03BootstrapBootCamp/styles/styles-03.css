@@ -1,0 +1,94 @@
+body {
+    color: rgba(90, 90, 90, 0.98) !important;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #4B5B64 !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #FFFFFF !important;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #E31929 !important;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF !important;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #E31929 !important;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #E7E7E7 !important;
+    background-color: #E31929 !important;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #E7E7E7 !important;
+    background-color: #E31929 !important;
+}
+
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    border-color: #E7E7E7 !important;
+    color: #E7E7E7 !important;
+    background-color: transparent !important;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFFFFF !important;
+}
+.navbar-default .navbar-toggle .icon-bar:hover,
+.navbar-default .navbar-toggle .icon-bar:focus {
+    background-color: #E7E7E7 !important;
+}
+
+.jumbotron {
+    background-color: #DBECE7 !important;
+}
+.jumbotron-wrapper {
+
+}
+
+main .active {
+    background-color: #DBECE7 !important;
+
+}
+
+.panel-info {
+    padding: 0 !important;
+}
+
+main a, .btn-link {
+    color: black !important;
+}
+
+main a:hover {
+    color: #E31929 !important;
+}
+
+.btn-link:hover {
+    color: #E31929 !important;
+}
+
+footer .row {
+    line-height: 60px;
+    border-top: 1px solid black;
+}
+
+footer .row h2 {
+    font-size: 1em !important;
+}

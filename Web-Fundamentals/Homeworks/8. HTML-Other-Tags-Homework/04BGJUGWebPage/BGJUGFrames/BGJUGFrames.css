@@ -1,0 +1,311 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+body {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: 100;
+}
+
+#headerWrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+    #title {
+        height: 55px;
+        padding: 9px 0 0 29px;
+        box-sizing: border-box;
+    }
+
+        #title h1 {
+            font-size: 1.7em;
+            font-weight: 100;
+            box-sizing: border-box;
+        }
+
+    #navContainer {
+        overflow: hidden;
+    }
+
+        #navbar {
+            float: left;
+        }
+
+            #navbar li {
+                display: inline-block;
+                margin: 11px 15px 8px 0;
+                padding: 0 20px;
+                list-style: none;
+            }
+
+                #navbar li  a {
+                    text-decoration: none;
+                    color: #7D7D7D;
+                    text-transform: uppercase;
+                    font-size: 0.9em;
+                }
+
+                #navbar li  a:hover {
+                    text-decoration: underline;
+                }
+
+        #searchForm {
+            float: right;
+            margin: 6px 0 8px;
+            background: #F7F7F7;
+            border: 1px solid #DDDDDD;
+        }
+
+            #searchField {
+                box-sizing: border-box;
+                height: 25px;
+                border: none;
+                background: transparent;
+                width: 176px;
+                float: left;
+                padding: 4px 6px 4px 6px;
+            }
+
+            #searchButton {
+                box-sizing: border-box;
+                height: 25px;;
+                border: none;
+                background-color: transparent;
+                background: url("../Images/search-btn.png") no-repeat 5px 3px;
+                width: 30px;
+                padding: 0;
+                float: left;
+            }
+
+            #searchField:focus, #searchButton:focus {
+                outline: 0;
+            }
+
+#mainWrapper {
+    box-sizing: border-box;
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+    #mainContainer {
+        box-sizing: border-box;
+        width: 758px;
+    }
+
+        #mainNav {
+            box-sizing: border-box;
+            width: 202px;
+            padding: 4em 1em;
+        }
+
+            #mainNav ul {
+                border-top: 1px solid #E9E9E9;
+            }
+
+                #mainNav ul li {
+                    margin: 11px 0;
+                    list-style: none;
+                }
+
+                    #mainNav ul li a {
+                        color: #225E9B;
+                        font-size: .9em;
+                        text-decoration: none;
+                    }
+
+                    #mainNav ul li a:hover {
+                        text-decoration: underline;
+                    }
+
+        #mainContent {
+            box-sizing: border-box;
+            width: 556px;
+            padding: 28px 10px 10px 20px;
+        }
+
+        #mainContent article {
+            margin-bottom: 20px;
+        }
+
+            #mainContent article h1 {
+                font-size: 1.7em;
+                font-weight: 100;
+            }
+
+            #mainContent article footer {
+                font-size: 0.8em;
+                color: #AFAFAF;
+                margin-top:5px;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+
+            #mainContent article footer a {
+                text-transform: uppercase;
+                color:gray;
+                font-size: 0.8em;
+                display: inline-block;
+                text-decoration: none;
+                border-bottom: 1px solid gray;
+                line-height: 1.2em;
+            }
+
+            #mainContent article footer a:hover {
+                color: black;
+            }
+
+            #mainContent article footer time {
+
+                 text-transform: uppercase;
+                 font-size: 0.8em;
+             }
+
+            #mainContent article p {
+
+                line-height: 1.5em;
+                font-size: 1em;
+            }
+
+            #mainContent article > a {
+                display: inline-block;
+                margin-top: 16px;
+                color: #225E9B;
+                font-size: .9em;
+                text-decoration: none;
+            }
+            #mainContent article > a:hover {
+                text-decoration: underline;
+            }
+
+            #pageButton {
+                padding-top: 45px;;
+                border-top: 1px solid #E9E9E9;
+                color: #225E9B;
+                letter-spacing: 1px;
+                font-size: 0.8em;
+            }
+
+                #pageButton a {
+                    color: #225E9B;
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                }
+
+                #pageButton a:hover {
+                    text-decoration: underline;
+                }
+
+    #widget {
+        box-sizing: border-box;
+        padding: 31px 10px;
+        text-align: left;
+        width: 202px;
+    }
+
+        #widget h2 {
+            color: #B5B5B5;
+            border-bottom: 1px solid #B5B5B5;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 100;
+            font-size: 0.8em;
+        }
+
+        #widget form select {
+            background: transparent;
+            margin-bottom: 23px;
+            width: 92px;
+        }
+
+        #widget form select:focus {
+            outline: 0;
+        }
+
+body > footer {
+    background: black;
+}
+
+    #twitterBarWrapper {
+        background: #F7F7F7;
+    }
+
+        #twitterBar {
+            height: 45px;
+            box-sizing: border-box;
+            padding: 14px 57px;
+            background: url("../Images/twitter-balloon.png") no-repeat 33px 11px;
+            font-style: italic;
+            font-size: .9em;
+            color: #777777;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+    #footerwrapper {
+        background: #000000;
+        color: #999999;
+        overflow: hidden;
+        padding: 20px 10px 1em 15px;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    #footerwrapper a {
+        color: white;
+        text-decoration: none;
+
+    }
+
+    #footerwrapper a:hover {
+        text-decoration: underline;
+    }
+
+        #footerwrapper .footerCol {
+            display: inline-block;
+            width: 170px;
+            margin-left: 20px;
+            float: left;
+            box-sizing: border-box;
+            font-size: .8em;
+            line-height: 1.1em;
+        }
+
+            #footerTitle {
+                font-size: 1.4em;
+            }
+
+            #footerwrapper .footerCol h3 {
+                color: #ffffff;
+                font-weight: 100;
+                margin-bottom: 8px;
+            }
+
+            #footerwrapper .footerCol ul li {
+                list-style: none;
+            }

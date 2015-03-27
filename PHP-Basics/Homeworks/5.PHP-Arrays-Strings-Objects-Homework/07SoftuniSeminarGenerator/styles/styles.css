@@ -1,0 +1,112 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup, var,
+b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent;
+}
+
+section {
+  width: 900px;
+  margin: 5px;
+}
+
+  .message {
+    display: inline-block;
+    background-color: #F1F1F1;
+    color: #23222C;
+    margin: 1px;
+    margin-bottom: 10px;
+  }
+
+  input, select {
+    background-color: #F1F1F1;
+    color: #23222C;
+    border: 1px solid #F85959;
+    margin-bottom: 10px;
+  }
+
+  select:hover {
+    border: 1px solid red;
+  }
+
+  input[type=submit]:hover {
+    cursor: pointer;
+    color: #F1F1F1;
+    background-color: #F85959;
+  }
+
+  textarea {
+    width: 900px;
+    height: 200px;
+    border: 1px solid #F85959;
+    display: block;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+
+    tr:nth-child(even) {
+      background-color: #F1F1F1 ;
+    }
+
+      table th {
+        background-color: #23222C;
+        color: #F1F1F1;
+      }
+
+      table td, table a {
+        color: #23222C;
+      }
+
+
+      a:hover {
+        color: #F85959;
+      }
+
+      button {
+        background-color: #F85959;
+        color: #F1F1F1;
+        border: none;
+      }
+
+      button:hover {
+        cursor: pointer;
+        border: 1px solid #F85959;  
+      }
+
+        .tooltip {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid #23222C;
+        width: 200px;
+        padding: 5px;
+        color: #23222C;
+        background: #F1F1F1;
+        z-index: 100;
+      }
+
+        .title {
+          font-weight: bold;
+          text-decoration: underline;
+          margin-right: 10px;
+        }
+

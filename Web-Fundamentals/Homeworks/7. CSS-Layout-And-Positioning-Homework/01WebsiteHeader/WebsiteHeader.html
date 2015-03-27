@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="WebsiteHeader.css"/>
+        <title>Website Header</title>
+	</head>
+    <body>
+    <header>
+        <div id="wrapper">
+            <!--<a href="https://softuni.bg">-->
+                <!--<div id="logo"><span id="beta">beta</span></div>-->
+            <!--</a>-->
+            <div>
+                <a href="https://softuni.bg" id="logo">
+                    <div id="beta">beta</div>
+                </a>
+            </div>
+            <div id="navWrapper">
+                <div id="userWrapper">
+                    <div id="userSection">
+                        <a href="https://softuni.bg/notifications" id="notification">0</a>
+                        <div id="user">
+                            <nav class="drop-down">user<span class="caret"></span>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="https://softuni.bg/users/profile/show">User Panel</a></li>
+                                        <li><a href="https://softuni.bg/account/manage">Account Management</a></li>
+                                        <li><a href="https://softuni.bg/users/profile/edit">Edit Profile</a></li>
+                                        <li><a href="https://softuni.bg/users/teamwork/list">Team Work</a></li>
+                                        <li><a href="https://softuni.bg/home/schedule">Schedule</a></li>
+                                        <li><a href="https://softuni.bg/Certificates/Certificates/Apply">Certificates</a></li>
+                                        <li><a href="https://softuni.bg/users/payments/pay">Payments</a></li>
+                                        <li><a href="https://softuni.bg/content/sentinel/sentinel.zip">Centinel</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <form  id="searchForm" method="get" action="http://softuni.bg/Search/Results?query=" target="_blank">
+                            <input id="searchBar" type="text" name="query" placeholder="Search..." />
+                            <!--<button id="searchButton" type="submit" onclick="submitForm()"></button>-->
+                            <input id="searchButton" type="submit" onclick="submitForm()" value=" "/>
+                        </form>
+                    </div>
+                </div>
+                <div id="menuWrapper">
+                    <nav>
+                        <ul id="navMenu">
+                            <li><a href="https://softuni.bg/news">news</a></li>
+                            <li class="drop-down">about the university<strong class="caret"></strong>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="https://softuni.bg/about">About</a></li>
+                                        <li><a href="https://softuni.bg/professions">Professions</a></li>
+                                        <li><a href="https://softuni.bg/plans">Educational Plans</a></li>
+                                        <li><a href="https://softuni.bg/majors">Majors</a></li>
+                                        <li><a href="https://softuni.bg/trainers">Trainers</a></li>
+                                        <li><a href="https://softuni.bg/news/SGExpressbank-student-loan">Financing</a></li>
+                                        <li><a href="https://softuni.bg/apply">Application</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="drop-down">Training Courses<span class="caret"></span>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="https://softuni.bg/trainings/courses/list">Courses</a></li>
+                                        <li><a href="https://softuni.bg/trainings/fasttracks">Fast-Track Courses</a></li>
+                                        <li><a href="https://softuni.bg/trainings/seminars/list">Seminars</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="https://softuni.bg/companies">for companies</a></li>
+                            <li><a href="https://softuni.bg/forum">forum</a></li>
+                            <li><a href="https://softuni.bg/contacts">contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    </body>
+</html>

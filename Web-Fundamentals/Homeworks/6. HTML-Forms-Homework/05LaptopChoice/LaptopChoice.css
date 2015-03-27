@@ -1,0 +1,160 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote, p {
+    display: block;
+}
+
+body {
+    color: #2C425A;
+    font-size: 14px;
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+}
+
+
+#left {
+    width: 578px;
+    height: 507px;
+    margin: 3px 0px 0px 3px;
+    padding: 0px 0px 0px 13px;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 16px 0px 13px 4px;
+}
+
+form {
+    display: inline-block;
+}
+
+button {
+    border: 1px solid #DBEFFA;
+    box-sizing: border-box;
+    position: relative;
+    width: 177px;
+    height: 212px;
+    margin: 0px 6px 10px 0px;
+    padding: 0;
+    border-radius: 10px 10px 0px 10px;
+}
+
+    .button-wrapper {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .title {
+        margin: 0px 0px 7px 0px;
+    }
+
+    h2 {
+        color: #2C425A;
+        font-size: 17px;
+        margin: 11px 5px 0px 9px;
+        text-align: left;
+    }
+
+    .description {
+        color: #2C425A;
+        font-size: 16px;
+        line-height: 18px;
+        text-align: left;
+        margin: 0px 0px 0px 10px;
+    }
+
+    .price {
+        width: 105px;
+        height: 39px;
+        box-sizing: border-box;
+        background-color: #2C425A;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        color: #ffffff;
+        border-top-left-radius: 10px;
+        font-size: 16px;
+        padding-top: 12px;
+    }
+
+    button:hover {
+        border-color: #2C425A;
+        cursor: pointer;
+    }
+
+#right {
+    border: 1px solid #DBEFFA;
+    width: 192px;
+    height: 505px;
+    margin: 3px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    background-color: #F7FCFF;
+}
+
+    h3, label {
+        font-weight: 100;
+        font-size: 16px;
+        margin: 10px 0px 0px 0px;
+        text-align: center;
+        display: block;
+    }
+
+    .sliderValue {
+        display: inline-block;
+        border: none;
+        background: transparent;
+        /*color: #2C425A;*/
+        color: #658eff;
+        font-size: 10px;
+        margin: 0px 0px 0px 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .rangeLeft {
+        display: inline-block;
+        float: left;
+        color: #2C425A;
+        font-size: 12px;
+        margin: 0px 0px 0px 2px;
+    }
+
+    .rangeRight {
+        display: inline-block;
+        float: right;
+        color: #2C425A;
+        font-size: 12px;
+        margin: 0px 2px 0px 0px;
+    }
+
+    .slider {
+        width: 185px;
+        display: block;
+        margin: 0;
+        height: 20px;
+    }
+
+

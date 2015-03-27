@@ -1,0 +1,321 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+div, header, h1, h2, h3, h4, h5, h6, img, span, nav, ul, li, a, aside, section, article, footer {
+    box-sizing: border-box;
+}
+
+
+$font-default: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-default: 14px;
+$color-default: #979797;
+$color-base: white;
+$border-outer: 3px double $color-default;
+$border-inner: 1px solid $color-default;
+$padding-default: 15px 10px;
+
+$purple: #370837;
+$blue: #0C0CB3;
+$green: #0D3B0D;
+$yellow: #F5F50C;
+$orange: #EC9911;
+$red: #D00B0B;
+
+@mixin default-gradient-box {
+    border-radius: 30px;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+
+@mixin outer-header {
+    text-align: center;
+    font-size: $font-size-default * 1.8;
+    color: $color-default;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+@mixin inner-header {
+    text-align: center;
+    font-size: $font-size-default * 1.4;
+    color: $color-default;
+    margin-bottom: 15px;
+    font-weight: 100;
+}
+
+@mixin radial-gradient($from, $to, $direction-moz, $direction-standard) {
+    background: -moz-radial-gradient($direction-moz, $from 0%, $to 100%);
+    background: radial-gradient($direction-standard, $from 0%, $to 100%);
+    background-color: $from;
+}
+
+@mixin linear-gradient($from, $to, $direction-moz, $direction-standard) {
+    background: -moz-linear-gradient($direction-moz, $from 0%, $to 100%);
+    background: linear-gradient($direction-standard, $from 0%, $to 100%);
+    background-color: $from;
+}
+
+
+@mixin hover-effect {
+    color: $color-base;
+    @include linear-gradient($color-default, $color-base, top, to bottom);
+}
+
+
+body {
+    @include linear-gradient($color-default, $color-base, top, to bottom);
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: $font-default;
+    font-size: $font-size-default;
+    border: $border-outer;
+    background: $color-base;
+    padding: 15px;
+    & > header {
+        width: 100%;
+        border: $border-outer;
+        color: $color-default;
+        padding: $padding-default;
+        overflow: hidden;
+        margin-bottom: 10px;
+        h1 {
+            font-size: $font-size-default * 2.5;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        nav > ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            li {
+                list-style: none;
+                overflow: hidden;
+                a {
+                    display: block;
+                    border: $border-inner;
+                    color: $color-default;
+                    text-decoration: none;
+                    width: 100px;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                }
+                a:hover {
+                    @include hover-effect;
+                }
+            }
+        }
+    }
+    & > section.linear {
+        border: $border-outer;
+        width: 100%;
+        padding: $padding-default;
+        margin-bottom: 10px;
+        header#linear > h1 {
+            @include outer-header;
+        }
+        article:nth-child(2) {
+            border: $border-inner;
+            padding: $padding-default;
+            margin-bottom: 10px;
+            & > header {
+                @include inner-header;
+            }
+            & > div.innerContainer {
+                display: flex;
+                flex-direction: row;
+                div.purple {
+                    @include linear-gradient($purple, $color-base, top, to bottom);
+                    @include default-gradient-box;
+                }
+                div.blue {
+                    @include linear-gradient($blue, $color-base, top, to bottom);
+                    @include default-gradient-box;
+                }
+                div.green {
+                    @include linear-gradient($green, $color-base, top, to bottom);
+                    @include default-gradient-box;
+                }
+                div.yellow {
+                    @include linear-gradient($yellow, $color-base, top, to bottom);
+                    @include default-gradient-box;
+                }
+                div.orange {
+                    @include linear-gradient($orange, $color-base, top, to bottom);
+                    @include default-gradient-box;
+                }
+                div.red {
+                    @include linear-gradient($red, $color-base, top, to bottom);
+                    @include default-gradient-box;
+                }
+            }
+        }
+        article:nth-child(3) {
+            border: $border-inner;
+            padding: $padding-default;
+            margin-bottom: 10px;
+            & > header {
+                @include inner-header;
+            }
+            & > div.innerContainer {
+                display: flex;
+                flex-direction: row;
+                div.purple {
+                    @include linear-gradient($purple, $color-base, left, to right);
+                    @include default-gradient-box;
+                }
+                div.blue {
+                    @include linear-gradient($blue, $color-base, left, to right);
+                    @include default-gradient-box;
+                }
+                div.green {
+                    @include linear-gradient($green, $color-base, left, to right);
+                    @include default-gradient-box;
+                }
+                div.yellow {
+                    @include linear-gradient($yellow, $color-base, left, to right);
+                    @include default-gradient-box;
+                }
+                div.orange {
+                    @include linear-gradient($orange, $color-base, left, to right);
+                    @include default-gradient-box;
+                }
+                div.red {
+                    @include linear-gradient($red, $color-base, left, to right);
+                    @include default-gradient-box;
+                }
+            }
+        }
+        article:nth-child(4) {
+            border: $border-inner;
+            padding: $padding-default;
+            & > header {
+                @include inner-header;
+            }
+            & > div.innerContainer {
+                display: flex;
+                flex-direction: row;
+                div.purple {
+                    @include linear-gradient($purple, $color-base, -45deg, 135deg);
+                    @include default-gradient-box;
+                }
+                div.blue {
+                    @include linear-gradient($blue, $color-base, -45deg, 135deg);
+                    @include default-gradient-box;
+                }
+                div.green {
+                    @include linear-gradient($green, $color-base, -45deg, 135deg);
+                    @include default-gradient-box;
+                }
+                div.yellow {
+                    @include linear-gradient($yellow, $color-base, -45deg, 135deg);
+                    @include default-gradient-box;
+                }
+                div.orange {
+                    @include linear-gradient($orange, $color-base, -45deg, 135deg);
+                    @include default-gradient-box;
+                }
+                div.red {
+                    @include linear-gradient($red, $color-base, -45deg, 135deg);
+                    @include default-gradient-box;
+                }
+            }
+        }
+    }
+    & > section.radial {
+        border: $border-outer;
+        width: 100%;
+        padding: $padding-default;
+        margin-bottom: 10px;
+        header#radial > h1 {
+            @include outer-header;
+        }
+        article:nth-child(2) {
+            border: $border-inner;
+            padding: $padding-default;
+            & > div.innerContainer {
+                display: flex;
+                flex-direction: row;
+                div.purple {
+                    @include radial-gradient($purple, $color-base, center, ellipse at center);
+                    @include default-gradient-box;
+                }
+                div.blue {
+                    @include radial-gradient($blue, $color-base, center, ellipse at center);
+                    @include default-gradient-box;
+                }
+                div.green {
+                    @include radial-gradient($green, $color-base, center, ellipse at center);
+                    @include default-gradient-box;
+                }
+                div.yellow {
+                    @include radial-gradient($yellow, $color-base, center, ellipse at center);
+                    @include default-gradient-box;
+                }
+                div.orange {
+                    @include radial-gradient($orange, $color-base, center, ellipse at center);
+                    @include default-gradient-box;
+                }
+                div.red {
+                    @include radial-gradient($red, $color-base, center, ellipse at center);
+                    @include default-gradient-box;
+                }
+            }
+        }
+    }
+    & > footer {
+        height: 200px;
+        border: $border-outer;
+        padding: $padding-default;
+        & > h3 {
+            @include outer-header;
+        }
+        & > ul {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            li {
+                list-style: none;
+                flex: 1;
+                margin: 0 auto;
+                line-height: 30px;
+                a {
+                    color: $color-default;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

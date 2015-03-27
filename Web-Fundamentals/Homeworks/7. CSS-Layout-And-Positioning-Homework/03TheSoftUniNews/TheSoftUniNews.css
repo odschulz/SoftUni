@@ -1,0 +1,182 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+body {
+    font-family: 'PT Sans', Tahoma, sans-serif;
+    font-size: 14px;
+    overflow: auto;
+}
+
+header {
+    background: url("Images/3.jpg");
+    width: 100%;
+    height: 91px;
+}
+
+    header > div {
+        display: inline-block;
+        background-color: #ff9c00;
+        float: right;
+        margin: 36px 66px 0px 0px;
+    }
+
+        header > div > a {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        header > div > a:hover {
+            background-color: #DC5100;
+            transition: all .3s ease;
+        }
+
+#bodyContent {
+    background-color: #EEEEEE;
+}
+
+    #container {
+        width: 1140px;
+        padding: 0 0px 20px 0px;
+        margin: 0px 0px 0px 105px;
+        background: transparent;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+        #title {
+            margin: 40px 0 19px;
+            padding-left: 15px;
+        }
+
+            #container > #title > h1 {
+                color: #234465;
+                font-weight: 100;
+                font-size: 23px;
+            }
+
+        .newsBox {
+            display: inline-block;
+            float: left;
+            background-color: white;
+            width: 352px;
+            height: 414px;
+            box-sizing: border-box;
+            margin: 0 14px;
+            box-shadow: 0 2px 3px #bfbfbf;
+            padding: 10px 35px;
+        }
+
+            .newsContent {
+                height: 100%;
+            }
+
+                .newsContent > h2 {
+                    margin: 18px 0px 13px 0px;
+                    text-transform: uppercase;
+                    font-size: 15px;
+                    letter-spacing: -1px;
+                    height: 34px;
+                }
+
+                        .newsContent > h2 > a {
+                            text-decoration: none;
+                            color: #234465;
+                        }
+
+                    .authorContainer {
+                        overflow: hidden;
+                    }
+
+                        .date {
+                            float: right;
+                            color: #000;
+                            margin-bottom: 5px;
+                        }
+
+                        .author {
+                            float: left;
+                            font-size: 13px;
+                            margin-right: 30px;
+                            color: #5a5a5a;
+                        }
+
+                    .newsContent > hr {
+                        margin: 21px 0;
+                        border: 0;
+                        border-top: 1px solid #eee;
+                    }
+
+                    .newsContent a {
+                        text-decoration: none;
+                    }
+
+                    .newsContent a:hover {
+                        text-decoration: underline;
+                    }
+
+                        .newsImage {
+                            width: 100%;
+                            display: block;
+                            margin-bottom: 20px;
+                        }
+
+                        .newsDetails {
+                            color: #5a5a5a;
+                            text-decoration: none;
+                            line-height: 1.6;
+                            font-size: 13px;
+                            height: 40px;
+                        }
+
+                    .tagLine {
+                        font-size: 13px;
+                        color: #5a5a5a;
+                        line-height: 1.3;
+                    }
+
+                        .tagLine > span {
+                            font-weight: bold;
+                        }
+
+        #pagingBar {
+            float: left;
+            margin: 51px 0px 0px 16px;
+        }
+
+            #pagingBar > ul > li {
+                display: inline-block;
+                list-style: none;
+                float: left;
+                background-color: #4CA0DB;
+                color: white;
+                padding: 8px 12px;
+                margin: 0 1px 0 0;
+            }
+
+                #pagingBar > ul > li:hover {
+                    background-color: #ff9c00;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                }

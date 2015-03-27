@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_01Shapes", "_01Shapes\_01Shapes.csproj", "{38F82E5A-37BA-465A-9476-9D46701E1E47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_02BankOfKurtovoKonare", "_02BankOfKurtovoKonare\_02BankOfKurtovoKonare.csproj", "{4E4C0C36-C3D3-43B3-B82A-9139C3491760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheSlum", "TheSlum-Skeleton\TheSlum.csproj", "{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38F82E5A-37BA-465A-9476-9D46701E1E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F82E5A-37BA-465A-9476-9D46701E1E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F82E5A-37BA-465A-9476-9D46701E1E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F82E5A-37BA-465A-9476-9D46701E1E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E4C0C36-C3D3-43B3-B82A-9139C3491760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4C0C36-C3D3-43B3-B82A-9139C3491760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4C0C36-C3D3-43B3-B82A-9139C3491760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4C0C36-C3D3-43B3-B82A-9139C3491760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

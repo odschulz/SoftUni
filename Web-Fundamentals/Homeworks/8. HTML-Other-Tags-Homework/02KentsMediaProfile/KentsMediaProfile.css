@@ -1,0 +1,108 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+body {
+    font-family: tahoma, verdana, arial, sans-serif;
+}
+
+#container {
+    overflow: hidden;
+    width: 1065px;
+    height: 383px;
+    margin: 10px 12px;
+    box-sizing: border-box;
+    background: #FFC0CB;
+    border-radius: 10px;
+    padding: 26px 0px 0px 0px;
+}
+
+    h1 {
+        text-align: center;
+        font-size: 32px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #userContainer {
+        /*display: inline-block;*/
+        float: left;
+        box-sizing: border-box;
+        width: 242px;
+        height: 282px;
+        margin: 0px 0px 0px 24px;
+    }
+
+        h2 {
+            font-weight: 100;
+            font-size: 20px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        #userContainer > figure > img {
+            margin-bottom: 5px;
+        }
+
+        meter {
+            width: 202px;
+            height: 24px;
+        }
+
+    #audioContainer {
+        float: left;
+        box-sizing: border-box;
+        /*background: red;*/
+        width: 302px;
+        height: 282px;
+        margin: 0px 0px 0px 8px;
+        position: relative;
+    }
+
+    #blackScreen {
+        position: absolute;
+        background: black;
+        width: 300px;
+        height: 150px;
+        top: 27px;
+        left: 0px;
+    }
+
+    #topControl {
+        display: block;
+        margin: 45px auto 85px auto;
+        width: 292px;
+        text-align: center;
+    }
+
+    #videoContainer {
+        float: left;
+        box-sizing: border-box;
+        width: 456px;
+        height: 282px;
+        margin: 0px 0px 0px 8px;
+        padding: 0;
+    }
+
+        #videoContainer video {
+            margin: 0;
+        }

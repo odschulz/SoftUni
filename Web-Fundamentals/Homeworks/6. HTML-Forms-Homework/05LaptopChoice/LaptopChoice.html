@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="LaptopChoice.css"/>
+        <title>Laptop Choice</title>
+	</head>
+<body>
+    <div id="left">
+
+        <h1>Apple's Laptops (6)</h1>
+        <form action="http://store.apple.com/us/buy-mac/macbook-air" method="post">
+            <button type="submit">
+                <div class="button-wrapper">
+                    <div class="title">
+                        <h2>Apple MacBook Air</h2>
+                        <div class="description">11.6 inch/1.3GHz Haswell</div>
+                    </div>
+                    <img src="Images/macbookair.png" alt="image"/>
+                </div>
+                <div class="price"><span>$1,729.00</span></div>
+            </button>
+        </form>
+        <form action="http://store.apple.com/us/buy-mac/macbook-air" method="post">
+            <button>
+                <div class="button-wrapper">
+                    <div class="title">
+                        <h2>Apple MacBook Air</h2>
+                        <div class="description">11.6 inch/1.4GHz Haswell</div>
+                    </div>
+                    <img src="Images/macbookairnew.png" alt="image"/>
+                </div>
+                <div class="price"><span>$1,825.00</span></div>
+            </button>
+        </form>
+        <form action="http://store.apple.com/us/buy-mac/macbook-air" method="post">
+            <button>
+                <div class="button-wrapper">
+                    <div class="title">
+                        <h2>Apple MacBook Air</h2>
+                        <div class="description">13.3 inch/1.3GHz Haswell</div>
+                    </div>
+                    <img src="Images/macbookair.png" alt="image"/>
+                </div>
+                <div class="price"><span>$1,919.00</span></div>
+            </button>
+        </form>
+        <form action="http://store.apple.com/us/buy-mac/macbook-air" method="post">
+            <button>
+                <div class="button-wrapper">
+                    <div class="title">
+                        <h2>Apple MacBook Air</h2>
+                        <div class="description">13.3 inch/1.4GHz Haswell</div>
+                    </div>
+                    <img src="Images/macbookair.png" alt="image"/>
+                </div>
+                <div class="price"><span>$1,999.00</span></div>
+            </button>
+        </form>
+        <form action="http://store.apple.com/us/buy-mac/macbook-air" method="post">
+            <button>
+                <div class="button-wrapper">
+                    <div class="title">
+                        <h2>Apple MacBook Air</h2>
+                        <div class="description">11.6 inch/1.4GHz Haswell 256GB SSD</div>
+                    </div>
+                    <img src="Images/macbookairnew.png" alt="image"/>
+                </div>
+                <div class="price"><span>$1,729.00</span></div>
+            </button>
+        </form>
+        <form action="http://store.apple.com/us/buy-mac/macbook-pro" method="post">
+            <button>
+                <div class="button-wrapper">
+                    <div class="title">
+                        <h2>Apple MacBook Pro</h2>
+                        <div class="description">13.3 inch/2.5GHz Ivy Bridge</div>
+                    </div>
+                    <img src="Images/macbookpro.png" alt="image"/>
+                </div>
+                <div class="price"><span>$2,529.00</span></div>
+            </button>
+        </form>
+
+    </div>
+
+    <div id="right">
+
+        <h3>Price</h3>
+        <div class="rangeLeft">1700</div>
+        <div class="rangeRight">2600</div>
+        <input type="text" id="priceValue" class="sliderValue" value="1700" disabled="disabled"/>
+        <input id="priceRange" class="slider" type="range" min="1700" max="2600" step="100" value="1700"
+               onchange="document.getElementById('priceValue').value = document.getElementById('priceRange').value"/>
+
+        <h3>RAM</h3>
+        <div class="rangeLeft">2048</div>
+        <div class="rangeRight">16384</div>
+        <input type="text" id="ramValue" class="sliderValue" value="4096" disabled="disabled"/>
+        <input id="ramRange" class="slider" type="range" min="2048" max="16384" step="2048" value="4096"
+               onchange="document.getElementById('ramValue').value = document.getElementById('ramRange').value"/>
+
+        <h3>Disc</h3>
+        <div class="rangeLeft">100GB</div>
+        <div class="rangeRight">2000GB</div>
+        <input type="text" id="discValue" class="sliderValue" value="200" disabled="disabled"/>
+        <input id="discRange" class="slider" type="range" min="100" max="2000" step="100" value="200"
+               onchange="document.getElementById('discValue').value = document.getElementById('discRange').value"/>
+
+        <h3>Display</h3>
+        <div class="rangeLeft">11.6</div>
+        <div class="rangeRight">18.4</div>
+        <input type="text" id="displayValue" class="sliderValue" value="11.6" disabled="disabled"/>
+        <input id="displayRange" class="slider" type="range" min="11.6" max="17.6" step="0.5" value="11.6"
+               onchange="document.getElementById('displayValue').value = document.getElementById('displayRange').value"/>
+
+        <h3>Weight</h3>
+        <div class="rangeLeft">1</div>
+        <div class="rangeRight">6</div>
+        <input type="text" id="weightValue" class="sliderValue" value="3" disabled="disabled"/>
+        <input id="weightRange" class="slider" type="range" min="1" max="6" step="1" value="3"
+               onchange="document.getElementById('weightValue').value = document.getElementById('weightRange').value"/>
+
+        <h3>Warranty</h3>
+        <div class="rangeLeft">12 month</div>
+        <div class="rangeRight">48 month</div>
+        <input type="text" id="warValue" class="sliderValue" value="24" disabled="disabled"/>
+        <input id="warRange" class="slider" type="range" min="12" max="48" step="12" value="24"
+               onchange="document.getElementById('warValue').value = document.getElementById('warRange').value"/>
+
+    </div>
+
+</body>
+</html>

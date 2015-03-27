@@ -1,0 +1,86 @@
+<form action="CVGenerator.php" method="post">
+	<fieldset id="personal-information">
+		<legend>Personal Information</legend>
+		<input type="text" name="fName" placeholder="First Name" required="required">
+		<input type="text" name="lName" placeholder="Last Name" required="required">
+		<input type="email" name="email" placeholder="Email" required="required">
+		<input type="tel" name="phone" placeholder="Phone Number" required="required">
+		<div>
+			<label for="female">Female</label>
+			<input type="radio" name="gender" value="Female" id="female" required="required">
+			<label for="male">Male</label>
+			<input type="radio" name="gender" value="Male" id="male" required="required">
+		</div>
+		<label for="bdate">Birth Date</label>
+		<input type="date" id="bdate" name="bdate" required="required">
+		<label for="nationality">Nationality</label>
+		<select name="nationality" id="nationality" required="required">
+			<option value="Bulgarian">Bulgarian</option>
+			<option value="Other">Other</option>
+		</select>
+	</fieldset>
+	<fieldset>
+		<legend>Last Work Position</legend>
+		<div>
+			<label for="companyName">Company Name</label>
+			<input type="text" id="companyName" name="companyName" required="required">
+		</div>
+		<div>
+			<label for="fromDate">From</label>
+			<input type="date" id="fromDate" name="fromDate" required="required">
+		</div>
+		<div>
+			<label for="toDate">To</label>
+			<input type="date" id="toDate" name="toDate" required="required">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Computer Skills</legend>
+		<h2>Programming Languages</h2>
+		<div class="progLangsContainer">
+			<input type="text" name="progLangs[]" class="progLangs" required="required">
+			<select name="progLangsLevel[]">
+				<option value="Beginner">Beginner</option>
+				<option value="Programmer">Programmer</option>
+				<option value="Ninja">Ninja</option>
+			</select>
+		</div>
+		<input type="button" value="Remove Language" onclick="removeItem('progLangsContainer', 'progLangs')">
+		<input type="button" value="Add Language" onclick="addItem('progLangsContainer', 'progLangs')">
+	</fieldset>
+	<fieldset>
+		<legend>Other Skills</legend>
+		<h2>Languages</h2>
+		<div class="langsContainer">
+			<input type="text" name="langs[]" class="langs" required="required">
+			<select name="langsComprehension[]" required="required">
+				<option disabled="disabled" selected="selected">Comprehension</option>
+				<option value="Beginner">Beginner</option>
+				<option value="Intermediate">Intermediate</option>
+				<option value="Advanced">Advanced</option>
+			</select>
+			<select name="langsReading[]" required="required">
+				<option disabled="disabled" selected="selected">Reading</option>
+				<option value="Beginner">Beginner</option>
+				<option value="Intermediate">Intermediate</option>
+				<option value="Advanced">Advanced</option>
+			</select>
+			<select name="langsWriting[]" required="required">
+				<option disabled="disabled" selected="selected">Writing</option>
+				<option value="Beginner">Beginner</option>
+				<option value="Intermediate">Intermediate</option>
+				<option value="Advanced">Advanced</option>
+			</select>
+		</div>
+		<input type="button" value="Remove Language" onclick="removeItem('langsContainer', 'langs')">
+		<input type="button" value="Add Language" onclick="addItem('langsContainer', 'langs')">
+		<h2>Driver's License</h2>
+		<label for="bCat">B</label>
+		<input type="checkbox" id="bCat" name="driving[]" value="B">
+		<label for="aCat">A</label>
+		<input type="checkbox" id="aCat" name="driving[]" value="A">
+		<label for="cCat">C</label>
+		<input type="checkbox" id="cCat" name="driving[]" value="C">
+	</fieldset>
+	<input type="submit" value="Generate CV">
+</form>

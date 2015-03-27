@@ -1,0 +1,147 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+div, header, h1, h2, h3, h4, h5, h6, img, span, nav, ul, li, a, aside, section, article, footer {
+    box-sizing: border-box;
+}
+
+body {
+    background: #EDEDED;
+    font-family: Tahoma, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+    #wrapper > form {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px #CECECE;
+        margin-top: 20px;
+        padding: 25px 20px 20px;
+    }
+
+        #wrapper > form > h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #wrapper > form > article {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            #wrapper > form > article > p {
+                text-align: center;
+            }
+
+        #wrapper > form > #container {
+            border-top: 1px solid #CECECE;
+            padding: 20px 0px;
+            overflow: hidden;
+            width: 640px;
+            margin: 0 auto;
+        }
+
+            #wrapper > form > #container > fieldset:nth-of-type(1) {
+                width: 300px;
+                float: left;
+                padding: 5px;
+            }
+
+            #wrapper > form > #container > fieldset:nth-of-type(2) {
+                width: 300px;
+                float: right;
+                padding: 5px;
+            }
+
+            #wrapper > form > #container > fieldset > input[type=text], input[type=submit] {
+                display: block;
+            }
+
+                #wrapper > form > #container > fieldset > legend {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+
+                #wrapper > form > #container > fieldset > input[type=text] {
+                    width: 100%;
+                    height: 40px;
+                    margin-bottom: 10px;
+                    padding: 5px;
+                    box-sizing: border-box !important;
+                    border: 1px solid #D3D3D3;
+                    border-radius: 5px;
+                }
+
+                #wrapper > form > #container > fieldset > input[type=text].field-ok {
+                    background: url("../images/ok.png") no-repeat 265px center;
+                }
+
+                #wrapper > form > #container > fieldset > input[type=text].field-no {
+                    background: url("../images/no.png") no-repeat 265px center;
+                }
+
+                #wrapper > form > #container > fieldset > input[type=checkbox] {
+                    float: left;
+                }
+
+                #wrapper > form > #container > fieldset > label {
+                    color: #B7BCBE;
+                    display: inline-block;
+                    margin-bottom: 10px;
+                    float: left;
+                    width: 80%;
+                }
+
+                #wrapper > form > #container > fieldset > input[type=submit] {
+                    background: #F0F0F0;
+                    height: 35px;
+                    line-height: 25px;
+                    width: 165px;
+                    box-shadow: 1px 1px 1px #CECECE;
+                    border: none;
+                    border-radius: 3px;
+                    font-weight: 900;
+                }
+
+                #wrapper > form > #container > fieldset > input[type=submit]:hover {
+                    background: #95F55C;
+                    cursor: pointer;
+                }
+
+                #wrapper > form > #container > fieldset > a {
+                    color: #EA687E;
+                    text-decoration: none;
+                    display: inline-block;
+                    margin-bottom: 10px;
+                }
+
+                #wrapper > form > #container > fieldset > a:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }

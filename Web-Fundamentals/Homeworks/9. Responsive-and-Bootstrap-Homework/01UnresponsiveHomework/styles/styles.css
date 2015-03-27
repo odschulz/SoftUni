@@ -1,0 +1,242 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+body {
+    background-color: #6698FF;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: auto;
+    font-size: 14px;
+}
+
+#wrapper > header {
+    clear: both;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+    #wrapper > header h1 {
+        margin: 0;
+        overflow: hidden;
+        padding: 0px 10px 25px 10px;
+        border-bottom: 2px solid black;
+    }
+
+        #wrapper > header h1 a {
+             color: white;
+             text-decoration: none;
+         }
+
+            #wrapper > header h1 a img {
+                float: left;
+                margin-right: 8px;
+                display: inline-block;
+            }
+
+            #wrapper > header h1 a span {
+                float: left;
+                font-size: 2.4em;
+                line-height: 103px;
+                height: 72px;
+                display: inline-block;
+            }
+
+    #wrapper > header > nav {
+        overflow: auto;
+        margin-top: -21px;
+    }
+
+        #wrapper > header > nav ul {
+            float: right;
+        }
+
+            #wrapper > header > nav ul li {
+                box-sizing: border-box;
+                float: left;
+                margin-right: 10px;
+                list-style: none;
+                border: 1px solid black;
+                background-color: white;
+                width: 130px;
+                height: 35px;
+                text-align: center;
+                line-height: 35px;
+            }
+
+                #wrapper > header > nav ul li a {
+                    color: black;
+                    text-decoration: none;
+                    font-size: 1.4em;
+                }
+
+#wrapper > section {
+    box-sizing: border-box;
+    width: 75%;
+    float: left;
+    padding-right: 10px;
+}
+
+    #wrapper > section article {
+        background-color: #E0EAFE;
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        padding: 1em 1.5em 2em;
+    }
+
+        #wrapper > section article h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+            #wrapper > section article p {
+                text-indent: 2em;
+                font-size: 1.2em;
+            }
+
+#wrapper > aside {
+    box-sizing: border-box;
+    width: 25%;
+    float: right;
+    padding-left: 10px;
+}
+
+    #wrapper > aside ul {
+        border: 1px solid black;
+        background-color: #E0EAFE;
+        padding: 1em 1.5em 2em;
+        overflow: hidden;
+    }
+
+        #wrapper > aside ul li {
+            box-sizing: border-box;
+            list-style: none;
+            padding-bottom: 8px;
+        }
+
+            #wrapper > aside ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 1.2em;
+            }
+
+#wrapper > footer {
+    clear: both;
+    background-color: #E0EAFE;
+    border: 1px solid black;
+    vertical-align: bottom;
+    padding-top: 1em;
+}
+
+    #wrapper > footer h2 {
+        text-align: center;
+        font-size: 1.4em;
+        line-height: 1.5em;
+    }
+
+
+@media screen and (max-width: 780px) {
+
+
+    #wrapper > header h1 {
+        padding: 0px 0px 25px 0px;
+    }
+
+        #wrapper > section {
+            width: 100%;
+            padding: 0px;
+        }
+
+        #wrapper > aside {
+            width: 100%;
+            padding: 0px;
+            margin-bottom: 10px;
+        }
+
+            #wrapper > aside ul li {
+                padding: 0 .3em;
+                float: left;
+                width: 25%;
+                text-align: center;
+            }
+    #wrapper > header h1 {
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    #wrapper > header {
+        margin-bottom: 15px;
+    }
+
+
+    #wrapper > header h1 a img {
+        float: none;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #wrapper > header h1 a span {
+        float: none;
+        display: block;
+        width: 190px;
+        line-height: 1.2em;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    #wrapper > header > nav ul {
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        #wrapper > header > nav ul li {
+            float: none;
+            display: block;
+            width: 85%;
+            height: 35px;
+            text-align: center;
+            margin: 0 auto;
+            /*line-height: 35px;*/
+        }
+
+    #wrapper > aside ul {
+        padding: 0 1.5em 1em;
+    }
+
+    #wrapper > aside ul li {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-top: 15px;
+    }
+}

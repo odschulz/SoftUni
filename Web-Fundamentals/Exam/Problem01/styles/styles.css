@@ -1,0 +1,111 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+div, header, h1, h2, h3, h4, h5, h6, img, span, nav, ul, li, a, aside, section, article, footer {
+    box-sizing: border-box;
+}
+
+body > section {
+    font-family: Helvetica, Tahoma, sans-serif;
+    padding: 10px;
+    overflow: auto;
+}
+
+    body > section > article {
+        width: 160px;
+        float: left;
+        margin-right: 10px;
+    }
+
+        body > section > article > div.movie-container {
+            height: 256px;
+            width: 100%;
+        }
+
+            body > section > article > div.movie-container > a {
+                display: block;
+                width: 160px;
+                border: 1px solid black;
+                margin-bottom: 5px;
+            }
+
+            body > section > article > div.movie-container> a:hover {
+                background: #820000;
+            }
+
+                body > section > article > div.movie-container > a > img.movie-poster {
+                    width: 140px;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                body > section > article > a > img:hover {
+
+                }
+
+                body > section > article > div.movie-container > p > a.movie-link {
+                    font-size: 16px;
+                }
+
+                body > section > article > div.movie-container > p > a.movie-link:hover {
+                    color: #9A1E15;
+                }
+
+        body > section > article > footer > a.genre {
+            font-size: 12px;
+            text-decoration: none;
+            color: #968E88;
+            line-height: 22px;
+            display: inline-block;
+            position: relative;
+        }
+
+        /*body > section > article > footer > a[title]:hover:after{*/
+            /*content: attr(title);*/
+            /*color: black;*/
+            /*background: #FFFFCB;*/
+            /*position: absolute;*/
+            /*left: 0;*/
+            /*top: 100%;*/
+            /*white-space: nowrap;*/
+            /*z-index: 20;*/
+        /*}*/
+
+            body > section > article > footer > a.genre > img.info-icon {
+                border: 1px solid black;
+                padding: 5px;
+                border-radius: 2px;
+                float: left;
+                margin-right: 5px;
+            }
+
+            body > section > article > footer > a.genre > img.info-icon:hover {
+                background: #FE0000;
+            }
+
+            body > section > article > footer > a.genre > span {
+                display: inline-block;
+                float: left;
+            }
+
+

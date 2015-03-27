@@ -1,0 +1,218 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, audio, canvas, details, figcaption,
+figure, footer, header, mark, menu, meter, nav,
+output, progress, section, summary, time, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+article, aside, dialog, figure, footer, header, nav, section, blockquote {
+    display: block;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+}
+
+    form {
+        width: 539px;
+        height: 384px;
+        margin: 4px 8px;
+        padding: 15px 13px 10px 13px;
+        background-color: #FFC0CB;
+        box-sizing: border-box;
+    }
+
+        legend {
+            display: inline-block;
+            margin: 0px 0px 5px 0px;
+            font-size: 40px;
+            font-style: italic;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        #fromDiv {
+            display: inline-block;
+            width: 250px;
+            height: 53px;
+            margin-right: 5px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+            #fromDiv > label, #toDiv > label {
+                font-style: italic;
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            #fromCity {
+                box-sizing: border-box;
+                width: 100%;
+                height: 30px;
+                margin: 0px;
+                background: #ffffff;
+                font-size: 20px;
+            }
+
+        #toDiv {
+            display: inline-block;
+            width: 250px;
+            height: 53px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+            #toCity {
+                box-sizing: border-box;
+                width: 100%;
+                height: 30px;
+                margin: 0px;
+                background: #ffffff;
+                font-size: 20px;
+            }
+
+        #directsDiv {
+            display: block;
+            padding-left: 256px;
+        }
+
+            #directs {
+                margin: 5px 0px 0px 6px;
+            }
+
+            #directsDiv > label {
+                display: inline-block;
+                margin-left: 5px;
+            }
+
+        .dateDiv {
+            display: inline-block;
+            width: 255px;
+            height: 62px;
+            margin: 0px 0px 2px 0px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding-top: 5px;
+
+        }
+
+            .dateDiv > label {
+                font-style: italic;
+                display: block;
+                margin-bottom: 6px;
+
+            }
+
+            .date {
+                box-sizing: border-box;
+                width: 100%;
+                height: 34px;
+                margin: 0px;
+                background: #ffffff;
+                font-size: 20px;
+            }
+
+        .timeDiv {
+            display: inline-block;
+            width: 253px;
+            height: 62px;
+            margin: 0px 0px 2px 0px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding-top: 5px;
+        }
+
+            .timeDiv > label {
+                font-style: italic;
+                display: block;
+                margin-bottom: 6px;
+            }
+
+            .time {
+                box-sizing: border-box;
+                height: 34px;
+                margin: 0px;
+                background: #ffffff;
+                font-size: 20px;
+                width: 49%;
+            }
+
+        #childrenDiv {
+            display: inline-block;
+            width: 255px;
+            height: 62px;
+            margin: 0px 0px 2px 0px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding-top: 5px;
+        }
+
+            #childrenDiv > label {
+                display: inline-block;
+                font-style: italic;
+                margin: 0px 55px 6px 0px;
+                font-size: 15px;
+            }
+
+            .number {
+                box-sizing: border-box;
+                height: 30px;
+                margin: 0px;
+                background: #ffffff;
+                font-size: 20px;
+                width: 32%;
+            }
+
+        #travelClassDiv {
+            display: inline-block;
+            width: 250px;
+            height: 58px;
+            margin: 0px 0px 2px 0px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding-top: 5px;
+        }
+
+            #travelClassDiv > label {
+                font-style: italic;
+                display: block;
+                margin-bottom: 6px;
+            }
+
+            #travelClass {
+                box-sizing: border-box;
+                width: 100%;
+                height: 30px;
+                margin: 0px;
+                background: #ffffff;
+                font-size: 20px;
+            }
+
+            #searchButton {
+                float: right;
+                width: 250px;
+                height: 40px;
+                margin-right: 4px;
+                font-size: 20px;
+            }

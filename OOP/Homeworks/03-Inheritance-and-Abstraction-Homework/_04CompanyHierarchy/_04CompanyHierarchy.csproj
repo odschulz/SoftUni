@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7E5422E-BD1F-4609-87D8-F84A3B679F97}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_04CompanyHierarchy</RootNamespace>
+    <AssemblyName>_04CompanyHierarchy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Company\People\Customers\Customer.cs" />
+    <Compile Include="Company\Department.cs" />
+    <Compile Include="Company\People\Employees\Developer.cs" />
+    <Compile Include="Company\People\Customers\ICustomer.cs" />
+    <Compile Include="Company\People\Employees\IDeveloper.cs" />
+    <Compile Include="Company\Projects\IProject.cs" />
+    <Compile Include="Company\Sales\ISale.cs" />
+    <Compile Include="Company\People\Employees\Employee.cs" />
+    <Compile Include="Company\People\Employees\IEmployee.cs" />
+    <Compile Include="Company\People\Employees\IManager.cs" />
+    <Compile Include="Company\People\IPerson.cs" />
+    <Compile Include="Company\People\Employees\ISalesEmployee.cs" />
+    <Compile Include="Company\Projects\Project.cs" />
+    <Compile Include="Company\Projects\ProjectState.cs" />
+    <Compile Include="Company\People\Employees\SalesEmployee.cs" />
+    <Compile Include="Company\Sales\Sale.cs" />
+    <Compile Include="MainProgram.cs" />
+    <Compile Include="Company\People\Employees\Manager.cs" />
+    <Compile Include="Company\People\Person.cs" />
+    <Compile Include="Company\People\Employees\RegularEmployee.cs" />
+    <Compile Include="ValidationMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
