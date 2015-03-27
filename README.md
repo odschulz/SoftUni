@@ -1,1 +1,1 @@
-# SoftUni
+# Software University assignments and exams
