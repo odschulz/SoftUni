@@ -1,0 +1,15 @@
+table, tr, td, th {
+    border: solid #000000 1px;
+}
+
+th {
+	padding: 10px;
+	background: #9E3BF6;
+	color: white;
+}
+
+td {
+	padding: 10px;
+	background: white;
+	color: #9E3BF6;
+}

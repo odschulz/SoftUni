@@ -1,0 +1,13 @@
+.books {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+
+.book-detail {
+		float: right;
+}
+
+.book-detail-label {
+	float: left;
+}
