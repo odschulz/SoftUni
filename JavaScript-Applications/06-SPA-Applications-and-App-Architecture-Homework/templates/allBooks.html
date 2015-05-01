@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td><a href="#!/add">add</a></td>
+        </tr>
+    </tfoot>
+    <tbody id="books">
+    {{#books}}
+    <tr>
+        <td>{{title}}</td>
+        <td>{{author}}</td>
+        <td>{{isbn}}</td>
+        <td><a href="#!/edit/{{id}}">edit</a></td>
+    </tr>
+    {{/books}}
+    </tbody>
+</table>
