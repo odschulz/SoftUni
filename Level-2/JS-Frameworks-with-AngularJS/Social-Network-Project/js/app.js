@@ -8,7 +8,7 @@ app.config(['$routeProvider',
                 controller: 'MainController'
             })
             .when('/settings/edit/profile/', {
-                templateUrl: 'templates/home.html',
+                templateUrl: 'templates/edit-profile-form.html',
                 controller: 'MainController'
             })
             .when('/settings/edit/password/', {

@@ -1,4 +1,12 @@
 body {
     max-width: 100%;
-    /*background: #E9EAED;*/
+    /*background: #E1BEE7;*/
+}
+
+.hidden {
+    display: none;
+}
+
+.navbar-static-top {
+    background-color: #F9F9F9;
 }
