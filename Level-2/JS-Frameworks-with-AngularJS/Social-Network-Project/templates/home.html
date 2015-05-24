@@ -1,0 +1,5 @@
+<!--<link rel="stylesheet" href="../css/bootstrap.css"/>-->
+<!--<link rel="stylesheet" href="../css/bootstrap-theme.css"/>-->
+
+<div ng-if="!isLogged()" ng-include="'templates/guest/register-page.html'"></div>
+<div ng-if="isLogged()" ng-include="'templates/user/news-feed.html'"></div>

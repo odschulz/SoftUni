@@ -1,0 +1,56 @@
+<div class="col-md-6 coll-sm-8 col-centered">
+
+    <div class="container-fluid">
+        <div>
+            <h3 class="video-title caption text-center">{{ video.title }}</h3>
+        </div>
+        <div>
+            <div class="col-lg-6 col-md-6 coll-sm-12">
+                <img ng-src="{{video.pictureUrl}}" alt="Video Image" class="img-responsive"/>
+            </div>
+            <div class="col-lg-6 col-md-6 coll-sm-12 jumbotron">
+                <div class="video-info">
+                    <label class="content-labels label">Length: </label><span>{{ video.length }}</span>
+                </div>
+                <div class="video-info">
+                    <label class="content-labels label">Category: </label><span>{{ video.category }}</span>
+                </div>
+                <div class="video-info">
+                    <label class="content-labels label">Subscribers: </label><span>{{ video.subscribers }}</span>
+                </div>
+                <div class="video-info">
+                    <label class="content-labels label">Posted: </label><span>{{ video.date | date:'dd/MM/yyyy' }}</span>
+                </div>
+                <div class="video-info">
+                    <label class="content-labels label">Subtitled: </label>
+                    <span ng-show="video.haveSubtitles">Yes</span>
+                    <span ng-show="!video.haveSubtitles">No</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <hr/>
+            <ul class="list-unstyled">
+                <li ng-repeat="comment in video.comments">
+                    <ul class="list-unstyled">
+                        <!--<li ng-repeat="commentLine in comment" class="list-unstyled">{{commentLine}}</li>-->
+                        <li><label class="label label-info">Author: </label><span>{{ comment.username }}</span></li>
+                        <li><label class="label label-info">Date: </label><span>{{ comment.date | date:'dd/MM/yyyy' }}</span></li>
+                        <li><label class="label label-info">Website: </label><span>{{ comment.websiteUrl }}</span></li>
+                        <li><label class="label label-info">Likes: </label><span>{{ comment.likes }}</span></li>
+                        <li><label class="label label-info">Comment: </label><p>{{ comment.content }}</p></li>
+                    </ul>
+                    <hr/>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="col-xs-12">
+        <a class="btn btn-default" href="#/videos">Back</a>
+    </div>
+
+</div>

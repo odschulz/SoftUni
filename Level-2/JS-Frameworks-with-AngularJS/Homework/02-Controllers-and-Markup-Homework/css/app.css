@@ -1,0 +1,52 @@
+.video-holder {
+	padding: 0 5px;
+}
+
+.picture-holder {
+	position: relative;
+}
+
+.video-length {
+	position: absolute;
+	bottom: 4px;
+	right: 5%;
+}
+
+.video-title {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.video-info {
+	font-size: 9pt;
+	color: grey;
+	text-align: left;
+}
+
+.video-info>label {
+	font-size: 8.5pt;
+	color: grey;
+}
+
+.separator {
+	font-size: 12pt;
+}
+
+.required-label:after {
+	content:"*";
+	color:red;
+}
+
+.control-label {
+	margin-right: 10px;
+}
+
+img {
+	max-height: 200px;
+	max-width: 300px;
+}
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}

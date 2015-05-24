@@ -1,0 +1,65 @@
+<form name="addVideoForm" class="form-horizontal col-md-6 coll-sm-8 col-centered">
+    <fieldset>
+        <legend class="text-center">Add New Video</legend>
+
+        <!-- video title-->
+        <div class="form-group">
+            <label for="videoTitle" class="col-lg-2 control-label required-label">Title</label>
+            <div class="col-lg-7">
+                <input type="text" name="videoTitle" id="videoTitle" class="form-control" placeholder="Title"
+                   ng-model="newVideo.title" required>
+            </div>
+            <div class="text-danger pull-right col-lg-3"
+                 ng-show="addVideoForm.videoTitle.$error.required && addVideoForm.videoTitle.$dirty">Title is required</div>
+        </div>
+        <!-- video url-->
+        <div class="form-group">
+            <label for="videoUrl" class="col-lg-2 control-label required-label">URL</label>
+            <div class="col-lg-7">
+                <input type="url" class="form-control" id="videoUrl" name="videoUrl" placeholder="URL"
+                       ng-model="newVideo.pictureUrl" required>
+            </div>
+            <div class="text-danger pull-right col-lg-3"
+                 ng-show="addVideoForm.videoUrl.$error.required && addVideoForm.videoUrl.$dirty">URL is Required!</div>
+            <div class="text-danger pull-right col-lg-3"
+                 ng-show="addVideoForm.videoUrl.$invalid
+                 && addVideoForm.videoUrl.$dirty
+                 && !addVideoForm.videoUrl.$error.required">Invalid URL</div>
+        </div>
+
+        <!-- video category-->
+        <div class="form-group">
+            <label for="videoCategory" class="col-lg-2 control-label required-label">Category</label>
+            <div class="col-lg-7">
+                <select name="videoCategory" class="form-control" id="videoCategory" ng-model="newVideo.category" required >
+                    <option selected value="">Select a category</option>
+                    <option value="IT">IT</option>
+                    <option value="Music">Music</option>
+                    <option value="Others">Other</option>
+                </select>
+            </div>
+            <div class="text-danger pull-right col-lg-3"
+                 ng-show="addVideoForm.videoCategory.$error.required && addVideoForm.videoCategory.$dirty">Select a category!</div>
+        </div>
+        <!-- video subtitles-->
+        <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-2">
+                <label>
+                    <input type="checkbox" name="videoSubtitles" ng-model="newVideo.haveSubtitles"> Subtitled
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-8 col-lg-offset-2">
+            <p class="pull-left text-primary">The fields marked with <span class="required-label"></span> are required.</p>
+        </div>
+        <!--submit video-->
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <a class="btn btn-default" href="#/videos">Cancel</a>
+                <button  name="saveVideo" ng-click="addNewVideo(video)" type="submit" class="btn btn-primary" ng-disabled="addVideoForm.videoUrl.$invalid || addVideoForm.videoTitle.$error.required ||
+        addVideoForm.videoCategory.$error.required">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+
+</form>
