@@ -1,4 +1,4 @@
-var app = angular.module('socialNetworkApp', ['ngResource', 'ngRoute', 'ngStorage']);
+var app = angular.module('socialNetworkApp', ['ngResource', 'ngRoute', 'ngStorage', 'ui-notification']);
 
 app.config(['$routeProvider',
     function($routeProvider) {

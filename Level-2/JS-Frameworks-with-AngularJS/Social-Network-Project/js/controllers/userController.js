@@ -1,4 +1,4 @@
-app.controller('UserController', ['$scope', 'authentication','userData',function ($scope, authentication, userData) {
+app.controller('UserController', ['$scope', 'authentication', 'Notification', 'userData', function ($scope, authentication, Notification, userData) {
     $scope.isLogged = function () {
         return authentication.isLogged();
     };
@@ -11,8 +11,7 @@ app.controller('UserController', ['$scope', 'authentication','userData',function
             .then(function (data) {
                 authentication.saveUser(data);
             }, function (error) {
-                // TODO: Get Noty or something
-                console.log(error.data.error_description);
+                Notification.error({message: error.data.error_description, delay: 2000});
             });
     };
 
@@ -24,13 +23,17 @@ app.controller('UserController', ['$scope', 'authentication','userData',function
             .then(function (data) {
                 authentication.saveUser(data);
             }, function (error) {
-                // TODO: Get Noty or something
-                console.log(error.data.error_description);
+                Notification.error({message: error.data.error_description, delay: 2000});
             });
     };
 
     $scope.logout = function () {
-
+        userData.logout()
+            .$promise
+            .then(function (data) {
+                authentication.removeUser();
+            }, function (error) {
+                Notification.error({message: error.data.error_description, delay: 2000});
+            });
     };
-
 }]);

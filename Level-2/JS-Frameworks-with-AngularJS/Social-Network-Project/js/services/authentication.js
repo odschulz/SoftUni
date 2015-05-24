@@ -4,23 +4,38 @@ app.factory('authentication', ['$localStorage', function($localStorage){
         return $localStorage.access_token !== undefined;
     }
 
-    function saveUserAccessToken(data) {
+    function saveUserData(data) {
         // TODO: see if needed to separate save user and save token
         $localStorage.$default({
             access_token: data.access_token,
             token_type: data.token_type,
             username: data.userName
         });
-        console.log($localStorage);
-
     }
+
     function clearAuthenticationStorage() {
         $localStorage.$reset();
     }
 
+    function getHeaders() {
+        var headers = {};
+
+        if (checkForAccessToken()) {
+            headers.Authorization =
+                getUserData().token_type.capitalizeFirstLetter() + ' ' + getUserData().access_token;
+        }
+
+        return headers;
+    }
+
+    function getUserData() {
+        return $localStorage;
+    }
+
     return {
         isLogged: checkForAccessToken,
-        saveUser: saveUserAccessToken,
-        deleteAuthentication: clearAuthenticationStorage
+        saveUser: saveUserData,
+        removeUser: clearAuthenticationStorage,
+        getHeaders: getHeaders
     }
 }]);
