@@ -1,2 +1,4 @@
-<div ng-if="!isLogged()" guest-register-form></div>
-<div ng-if="isLogged()" ng-include="'templates/news-feed.html'"></div>
+<div class="container">
+    <div ng-if="!isLogged()" guest-welcome-screen></div>
+    <div ng-if="isLogged()" ng-include="'templates/news-feed.html'"></div>
+</div>

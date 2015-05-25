@@ -7,13 +7,21 @@ app.config(['$routeProvider',
                 templateUrl: 'templates/home.html',
                 controller: 'MainController'
             })
+            .when('/login/', {
+                templateUrl: 'templates/login-form.html',
+                controller: 'UserController'
+            })
+            .when('/register', {
+                templateUrl: 'templates/register-form.html',
+                controller: 'UserController'
+            })
             .when('/settings/edit/profile/', {
                 templateUrl: 'templates/edit-profile-form.html',
-                controller: 'MainController'
+                controller: 'EditProfileController'
             })
             .when('/settings/edit/password/', {
-                templateUrl: 'templates/home.html',
-                controller: 'MainController'
+                templateUrl: 'templates/edit-password-form.html',
+                controller: 'EditProfileController'
             })
             .otherwise({
                 redirectTo: '/'
