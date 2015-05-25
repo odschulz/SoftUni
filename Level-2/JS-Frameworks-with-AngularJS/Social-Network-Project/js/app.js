@@ -9,19 +9,47 @@ app.config(['$routeProvider',
             })
             .when('/login/', {
                 templateUrl: 'templates/login-form.html',
-                controller: 'UserController'
+                controller: 'UserController',
+                resolve: {
+                    authorized: function ($localStorage, $location) {
+                        if ($localStorage.access_token) {
+                            $location.path('/');
+                        }
+                    }
+                }
             })
             .when('/register', {
                 templateUrl: 'templates/register-form.html',
-                controller: 'UserController'
+                controller: 'UserController',
+                resolve: {
+                    authorized: function ($localStorage, $location) {
+                        if ($localStorage.access_token) {
+                            $location.path('/');
+                        }
+                    }
+                }
             })
             .when('/settings/edit/profile/', {
                 templateUrl: 'templates/edit-profile-form.html',
-                controller: 'EditProfileController'
+                controller: 'EditUserController',
+                resolve: {
+                    authorized: function ($localStorage, $location) {
+                        if (!$localStorage.access_token) {
+                            $location.path('/');
+                        }
+                    }
+                }
             })
             .when('/settings/edit/password/', {
                 templateUrl: 'templates/edit-password-form.html',
-                controller: 'EditProfileController'
+                controller: 'EditUserController',
+                resolve: {
+                    authorized: function ($localStorage, $location) {
+                        if (!$localStorage.access_token) {
+                            $location.path('/');
+                        }
+                    }
+                }
             })
             .otherwise({
                 redirectTo: '/'
