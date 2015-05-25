@@ -67,7 +67,7 @@ app.config(['usSpinnerConfigProvider', function (usSpinnerConfigProvider) {
         rotate: 90, // The rotation offset
         color: '#66AFE9', // #rgb or #rrggbb or array of colors
         speed: 0.5, // Rounds per second
-        trail: 10 // Afterglow percentage
+        trail: 50 // Afterglow percentage
     });
 }]);
 

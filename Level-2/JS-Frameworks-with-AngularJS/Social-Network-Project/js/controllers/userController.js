@@ -8,13 +8,14 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
 
         usSpinnerService.spin('spinner-1');
 
-        userData.login($scope.user)
+        userData.login(user)
             .$promise
             .then(function (data) {
                 usSpinnerService.stop('spinner-1');
                 authentication.saveUser(data);
                 $location.path('/');
             }, function (error) {
+                usSpinnerService.stop('spinner-1');
                 Notification.error({message: error.data.error_description, delay: 2000});
             });
     };
@@ -31,7 +32,8 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
                 authentication.saveUser(data);
                 $location.path('/');
             }, function (error) {
-                Notification.error({message: error.data.error_description, delay: 2000});
+                usSpinnerService.stop('spinner-1');
+                Notification.error({message: error.data.message, delay: 2000});
             });
     };
 
@@ -44,7 +46,8 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
                 usSpinnerService.stop('spinner-1');
                 authentication.removeUser();
             }, function (error) {
-                Notification.error({message: error.data.error_description, delay: 2000});
+                usSpinnerService.stop('spinner-1');
+                Notification.error({message: error.data.message, delay: 2000});
             });
     };
 }]);

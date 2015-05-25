@@ -42,17 +42,33 @@ app.factory('userData', ['$resource', 'authentication', 'BASE_SERVICE_URL',funct
             BASE_SERVICE_URL + 'users/logout',
             null,
             {
-                'save': {
+                'post': {
                     method: 'POST',
                     headers: authenticationHeaders
                 }
             })
-            .save();
+            .post();
+    }
+
+    function changePassword(data) {
+        var authenticationHeaders = authentication.getHeaders();
+
+        return $resource(
+            BASE_SERVICE_URL + 'me/changepassword',
+            null,
+            {
+                'put': {
+                    method: 'PUT',
+                    headers: authenticationHeaders
+                }
+            })
+            .put(data);
     }
 
     return {
         register: registerUser,
         login: loginUser,
-        logout: logoutUser
+        logout: logoutUser,
+        changePassword: changePassword
     }
 }]);
