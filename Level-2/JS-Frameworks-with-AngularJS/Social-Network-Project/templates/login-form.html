@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
             <div class="well">
-                <form class="form-horizontal" ng-submit="login()">
+                <form class="form-horizontal" ng-submit="login()" name="loginForm">
                     <fieldset>
                         <legend>Login</legend>
                         <!--username-->
@@ -16,13 +16,14 @@
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Password: </label>
                             <div class="col-lg-10">
-                                <input type="password" class="form-control" id="inputPassword" ng-model="user.password" placeholder="Password" required>
+                                <input type="password" class="form-control" id="inputPassword" name="inputPassword" ng-model="user.password" ng-minlength="6" ng-maxlength="100" placeholder="Password" required>
+                                <span class="label label-danger" ng-show="loginForm.inputPassword.$error.minlength">Too short!</span>
                             </div>
                         </div>
                         <!--submit-->
                         <div class="form-group pull-right">
                             <div class="col-lg-10">
-                                <button type="submit" class="btn btn-info">Login</button>
+                                <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-info">Login</button>
                             </div>
                         </div>
                     </fieldset>

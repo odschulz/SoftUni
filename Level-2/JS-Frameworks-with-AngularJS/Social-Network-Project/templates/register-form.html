@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
             <div class="well">
-                <form class="form-horizontal" ng-submit="register(user)">
+                <form class="form-horizontal" name="registerForm" ng-submit="register(user)">
                     <fieldset>
                         <legend>Register</legend>
                         <!--username-->
@@ -16,14 +16,17 @@
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                             <div class="col-lg-10">
-                                <input ng-model="registerUserData.password" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                                <input ng-model="registerUserData.password" equals="{{registerUserData.confirmPassword}}" ng-minlength="6"
+                                       type="password" class="form-control" id="inputPassword"  name="password" placeholder="Password" required>
+                                <span class="label label-danger" ng-show="registerForm.password.$error.minlength">Must be at least 6 symbols!</span>
                             </div>
                         </div>
                         <!--confirm password-->
                         <div class="form-group">
                             <label for="inputConfirmPassword" class="col-lg-2 control-label">Confirm Password</label>
                             <div class="col-lg-10">
-                                <input ng-model="registerUserData.confirmPassword" type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" required>
+                                <input ng-model="registerUserData.confirmPassword" equals="{{registerUserData.password}}"
+                                       type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" required>
                             </div>
                         </div>
                         <!--name-->
@@ -61,7 +64,7 @@
                         <!--submit-->
                         <div class="form-group pull-right">
                             <div class="col-lg-10">
-                                <button type="submit" class="btn btn-info">Submit</button>
+                                <button type="submit" ng-disabled="registerForm.$invalid" class="btn btn-info">Submit</button>
                             </div>
                         </div>
                     </fieldset>
