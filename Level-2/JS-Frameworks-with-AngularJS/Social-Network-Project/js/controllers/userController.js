@@ -47,7 +47,7 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
                 authentication.removeUser();
             }, function (error) {
                 usSpinnerService.stop('spinner-1');
-                Notification.error({message: error.data.message, delay: 2000});
+                Notification.error({message: error.data.message, delay: 4000});
             });
     };
 

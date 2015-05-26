@@ -61,7 +61,7 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
                 }
             })
             .get();
-    };
+    }
 
     function changePassword(data, authenticationHeaders) {
 
@@ -77,11 +77,25 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
             .put(data);
     }
 
+    function editProfile(data, authenticationHeaders) {
+        return $resource(
+            BASE_SERVICE_URL + 'me',
+            null,
+            {
+                'put': {
+                    method: 'PUT',
+                    headers: authenticationHeaders
+                }
+            })
+            .put(data);
+    }
+
     return {
         register: registerUser,
         login: loginUser,
         logout: logoutUser,
         getDataAboutMe: getDataAboutMe,
-        changePassword: changePassword
+        changePassword: changePassword,
+        editProfile: editProfile
     }
 }]);
