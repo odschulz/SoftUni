@@ -15,6 +15,21 @@ app.controller('EditUserController', ['$scope', '$location', 'authentication', '
                 usSpinnerService.stop('spinner-1');
                 Notification.error({message: error.data.message, delay: 2000});
             });
-    }
+    };
+
+    $scope.getUserData = function () {
+        userData.getDataAboutMe()
+            .$promise
+            .then(function (data) {
+                usSpinnerService.stop('spinner-1');
+                $scope.userData = data;
+            }, function (error) {
+                usSpinnerService.stop('spinner-1');
+                Notification.error({message: error.data.message, delay: 2000});
+            });
+    };
+
+    $scope.editProfile = function () {
+    };
 
 }]);

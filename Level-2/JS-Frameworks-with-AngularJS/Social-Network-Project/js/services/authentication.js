@@ -28,6 +28,10 @@ app.factory('authentication', ['$localStorage', function($localStorage){
         return headers;
     }
 
+    function getUsername() {
+        return getUserData().username;
+    }
+
     function getUserData() {
         return $localStorage;
     }
@@ -36,6 +40,7 @@ app.factory('authentication', ['$localStorage', function($localStorage){
         isLogged: checkForAccessToken,
         saveUser: saveUserData,
         removeUser: clearAuthenticationStorage,
-        getHeaders: getHeaders
+        getHeaders: getHeaders,
+        getUsername: getUsername
     }
 }]);

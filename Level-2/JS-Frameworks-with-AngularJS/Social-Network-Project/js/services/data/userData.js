@@ -50,6 +50,21 @@ app.factory('userData', ['$resource', 'authentication', 'BASE_SERVICE_URL',funct
             .post();
     }
 
+    function getDataAboutMe() {
+        var authenticationHeaders = authentication.getHeaders();
+
+        return $resource(
+            BASE_SERVICE_URL + 'me',
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    };
+
     function changePassword(data) {
         var authenticationHeaders = authentication.getHeaders();
 
@@ -69,6 +84,7 @@ app.factory('userData', ['$resource', 'authentication', 'BASE_SERVICE_URL',funct
         register: registerUser,
         login: loginUser,
         logout: logoutUser,
+        getDataAboutMe: getDataAboutMe,
         changePassword: changePassword
     }
 }]);
