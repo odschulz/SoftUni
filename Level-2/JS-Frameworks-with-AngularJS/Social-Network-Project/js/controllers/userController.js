@@ -40,7 +40,7 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
     $scope.logout = function () {
         usSpinnerService.spin('spinner-1');
 
-        userData.logout()
+        userData.logout(getAuthenticationHeaders())
             .$promise
             .then(function (data) {
                 usSpinnerService.stop('spinner-1');
@@ -50,4 +50,9 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
                 Notification.error({message: error.data.message, delay: 2000});
             });
     };
+
+    function getAuthenticationHeaders() {
+        return authentication.getHeaders();
+    }
+
 }]);

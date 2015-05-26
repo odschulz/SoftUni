@@ -1,12 +1,10 @@
 app.controller('EditUserController', ['$scope', '$location', 'authentication', 'userData', 'Notification', 'usSpinnerService', function ($scope, $location, authentication, userData, Notification, usSpinnerService) {
     $scope.changePassword = function (data) {
         var passwordData = $scope.passwordData;
-        console.log(passwordData);
-        
 
         usSpinnerService.spin('spinner-1');
 
-        userData.changePassword(passwordData)
+        userData.changePassword(passwordData, getAuthenticationHeaders())
             .$promise
             .then(function (data) {
                 usSpinnerService.stop('spinner-1');
@@ -18,7 +16,7 @@ app.controller('EditUserController', ['$scope', '$location', 'authentication', '
     };
 
     $scope.getUserData = function () {
-        userData.getDataAboutMe()
+        userData.getDataAboutMe(getAuthenticationHeaders())
             .$promise
             .then(function (data) {
                 usSpinnerService.stop('spinner-1');
@@ -31,5 +29,9 @@ app.controller('EditUserController', ['$scope', '$location', 'authentication', '
 
     $scope.editProfile = function () {
     };
+
+    function getAuthenticationHeaders() {
+        return authentication.getHeaders();
+    }
 
 }]);

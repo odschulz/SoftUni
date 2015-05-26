@@ -1,4 +1,4 @@
-app.factory('userData', ['$resource', 'authentication', 'BASE_SERVICE_URL',function ($resource, authentication,BASE_SERVICE_URL) {
+app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BASE_SERVICE_URL) {
     //function sampleGetRequest() {
     //    var resource = $resource(BASE_SERVICE_URL + 'ads:adId', {adId: '@id'}, {
     //        update: {method: 'PUT'}
@@ -35,8 +35,7 @@ app.factory('userData', ['$resource', 'authentication', 'BASE_SERVICE_URL',funct
             .save(user);
     }
 
-    function logoutUser() {
-        var authenticationHeaders = authentication.getHeaders();
+    function logoutUser(authenticationHeaders) {
 
         return $resource(
             BASE_SERVICE_URL + 'users/logout',
@@ -50,8 +49,7 @@ app.factory('userData', ['$resource', 'authentication', 'BASE_SERVICE_URL',funct
             .post();
     }
 
-    function getDataAboutMe() {
-        var authenticationHeaders = authentication.getHeaders();
+    function getDataAboutMe(authenticationHeaders) {
 
         return $resource(
             BASE_SERVICE_URL + 'me',
@@ -65,8 +63,7 @@ app.factory('userData', ['$resource', 'authentication', 'BASE_SERVICE_URL',funct
             .get();
     };
 
-    function changePassword(data) {
-        var authenticationHeaders = authentication.getHeaders();
+    function changePassword(data, authenticationHeaders) {
 
         return $resource(
             BASE_SERVICE_URL + 'me/changepassword',
