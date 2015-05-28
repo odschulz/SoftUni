@@ -17,8 +17,11 @@
                             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                             <div class="col-lg-10">
                                 <input ng-model="registerUserData.password" equals="{{registerUserData.confirmPassword}}" ng-minlength="6"
-                                       type="password" class="form-control" id="inputPassword"  name="password" placeholder="Password" required>
-                                <span class="label label-danger" ng-show="registerForm.password.$error.minlength">Must be at least 6 symbols!</span>
+                                       type="password" class="form-control" id="inputPassword"  name="password"
+                                       placeholder="Password" required>
+                                <span class="label label-danger" ng-show="registerForm.password.$error.minlength">
+                                    Must be at least 6 symbols!
+                                </span>
                             </div>
                         </div>
                         <!--confirm password-->
@@ -26,14 +29,16 @@
                             <label for="inputConfirmPassword" class="col-lg-2 control-label">Confirm Password</label>
                             <div class="col-lg-10">
                                 <input ng-model="registerUserData.confirmPassword" equals="{{registerUserData.password}}"
-                                       type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" required>
+                                       type="password" class="form-control" id="inputConfirmPassword"
+                                       placeholder="Confirm Password" required>
                             </div>
                         </div>
                         <!--name-->
                         <div class="form-group">
                             <label for="inputName" class="col-lg-2 control-label">Name</label>
                             <div class="col-lg-10">
-                                <input ng-model="registerUserData.name" type="text" class="form-control" id="inputName" placeholder="Name" required>
+                                <input ng-model="registerUserData.name" type="text" class="form-control"
+                                       id="inputName" placeholder="Name" required>
                             </div>
                         </div>
                         <!--email-->

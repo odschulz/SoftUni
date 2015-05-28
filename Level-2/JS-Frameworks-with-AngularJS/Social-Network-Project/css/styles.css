@@ -12,3 +12,9 @@ body {
     background-color: transparent;
     border: none;
 }
+
+/*edit-profile-form*/
+#profile-image {
+    max-width: 140px;
+    max-height: 160px;
+}

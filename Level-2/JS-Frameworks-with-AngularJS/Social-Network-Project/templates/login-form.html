@@ -9,14 +9,17 @@
                         <div class="form-group">
                             <label for="inputUsername" class="col-lg-2 control-label">Username: </label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputUsername" ng-model="user.username" placeholder="Username" required>
+                                <input type="text" class="form-control" id="inputUsername"
+                                       ng-model="user.username" placeholder="Username" required>
                             </div>
                         </div>
                         <!--password-->
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Password: </label>
                             <div class="col-lg-10">
-                                <input type="password" class="form-control" id="inputPassword" name="inputPassword" ng-model="user.password" ng-minlength="6" ng-maxlength="100" placeholder="Password" required>
+                                <input type="password" class="form-control" id="inputPassword" name="inputPassword"
+                                       ng-model="user.password" ng-minlength="6" ng-maxlength="100"
+                                       placeholder="Password" required>
                                 <span class="label label-danger" ng-show="loginForm.inputPassword.$error.minlength">Too short!</span>
                             </div>
                         </div>
