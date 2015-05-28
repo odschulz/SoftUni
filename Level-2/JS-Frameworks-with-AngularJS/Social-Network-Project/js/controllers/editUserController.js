@@ -56,25 +56,34 @@ app.controller('EditUserController', ['$scope', '$location', 'authentication', '
         return authentication.getHeaders();
     }
 
-    function readURL(input) {
+    $scope.putImageInUserData = function(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
+            var inputButtonId = $(input).attr('id');
+            var imageContainerId = getImageContainerId(inputButtonId);
+            var propertyName = getPropertyName(imageContainerId);
 
             reader.onload = function (e) {
-                $('#profile-pic').attr('src', e.target.result);
-                //$scope.userData.profileImageData = e.target.result;
-                //console.log($scope.userData);
-
+                $('#' + imageContainerId).attr('src', e.target.result);
+                $scope.userData[propertyName] = e.target.result;
             };
 
             reader.readAsDataURL(input.files[0]);
         }
-    }
 
-    $("#upload-pic").change(function(){
-        readURL(this);
-    });
+        function getImageContainerId(inputButtonId) {
+            var words = inputButtonId.split('-');
+            var imageContainerId = words[0] + '-' + words[1];
 
+            return imageContainerId;
+        }
 
+        function getPropertyName(elementId) {
+            var words = elementId.split('-');
+            var propertyName = words[0].toLowerCase() + words[1].capitalizeFirstLetter() + 'Data';
+
+            return propertyName;
+        }
+    };
 
 }]);
