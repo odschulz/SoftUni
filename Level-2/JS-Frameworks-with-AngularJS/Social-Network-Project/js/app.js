@@ -1,7 +1,9 @@
 var app = angular.module('socialNetworkApp', ['ngResource', 'ngRoute', 'ngStorage', 'angularSpinner', 'ui-notification']);
 
 app.config(['$routeProvider',
-    function($routeProvider) {
+    function($routeProvider, $httpProvider) {
+        //$httpProvider.interceptors.push('authHttpResponseInterceptor');
+
         $routeProvider
             .when('/', {
                 templateUrl: 'templates/home.html',
@@ -56,6 +58,11 @@ app.config(['$routeProvider',
             });
     }
 ]);
+
+app.config(['$httpProvider',function($httpProvider) {
+    //Http Interceptor to check auth failures
+    $httpProvider.interceptors.push('authHttpResponseInterceptor');
+}]);
 
 app.config(['usSpinnerConfigProvider', function (usSpinnerConfigProvider) {
     usSpinnerConfigProvider.setDefaults({

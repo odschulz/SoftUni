@@ -5,7 +5,6 @@ app.factory('authentication', ['$localStorage', function($localStorage){
     }
 
     function saveUserData(data) {
-        // TODO: see if needed to separate save user and save token
         $localStorage.$default({
             access_token: data.access_token,
             token_type: data.token_type,

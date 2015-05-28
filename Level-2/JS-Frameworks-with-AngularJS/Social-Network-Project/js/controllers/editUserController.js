@@ -56,4 +56,25 @@ app.controller('EditUserController', ['$scope', '$location', 'authentication', '
         return authentication.getHeaders();
     }
 
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profile-pic').attr('src', e.target.result);
+                //$scope.userData.profileImageData = e.target.result;
+                //console.log($scope.userData);
+
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#upload-pic").change(function(){
+        readURL(this);
+    });
+
+
+
 }]);
