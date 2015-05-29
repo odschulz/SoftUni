@@ -38,7 +38,8 @@
                 <li>
                     <a href="#/users/{{me.username}}/" id="profile-data-navbar">
                         <div>
-                            <img ng-src="{{me.profileImage}}" alt="Profile image" id="profile-image-navbar"/>
+                            <img ng-src="{{me.profileImage}}" default-image="{{defaultImage}}" alt="Profile image"
+                                 id="profile-image-navbar"/>
                             <span>{{me.fullName}}</span>
                         </div>
                     </a>

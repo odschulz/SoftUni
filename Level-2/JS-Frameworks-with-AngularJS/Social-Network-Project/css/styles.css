@@ -100,3 +100,16 @@ ul > li {
 .delimiter {
     margin: 2px 0;
 }
+
+#friends-preview-header {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.friend-preview-name {
+    margin: 0;
+    font-size: 13px;
+    color: black;
+    text-align: center;
+}
