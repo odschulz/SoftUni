@@ -1,4 +1,4 @@
-app.controller('UserController', ['$scope', '$location','authentication', 'Notification', 'userData', 'usSpinnerService', function ($scope, $location, authentication, Notification, userData, usSpinnerService) {
+app.controller('UserController', ['$scope', '$location', '$timeout', 'authentication', 'Notification', 'userData', 'usSpinnerService', function ($scope, $location, $timeout, authentication, Notification, userData, usSpinnerService) {
     $scope.isLogged = function () {
         return authentication.isLogged();
     };
@@ -45,7 +45,6 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
             .$promise
             .then(function (data) {
                 usSpinnerService.stop('spinner-1');
-                $scope.me = {} || $scope.me;
                 $scope.me.fullName = data.name;
                 $scope.me.profileImage = data.profileImageData;
             }, function (error) {
@@ -68,15 +67,35 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
             });
     };
 
+    $scope.searchForUsers = function () {
+        var searchPhrase = $scope.searchPhrase.trim();
+
+        if(searchPhrase !== ""){
+            userData.searchForUsers(getAuthenticationHeaders(), searchPhrase)
+                .$promise
+                .then(function (data) {
+                    $scope.searchResults = data;
+                    
+                }, function (error) {
+                    Notification.error({message: 'Could not retrieve data from server!', delay: 4000});
+                });
+        } else {
+            $scope.searchResults = undefined;
+        }
+    };
+
     function getAuthenticationHeaders() {
         return authentication.getHeaders();
     }
 
-    $scope.test = function () {
-        console.log('test');
-        console.log($scope);
-        console.log($scope.$scope);
+    $scope.clearSearchResults = function () {
+        $timeout(function() {
+            console.log(this);
 
+            $scope.searchResults = undefined;
+            $scope.searchPhrase = '';
+        }, 100);
     }
+
 
 }]);

@@ -18,14 +18,25 @@
             <!--search bar-->
             <form class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Find...">
+                    <input type="text" ng-model="searchPhrase" ng-change="searchForUsers()"
+                           ng-blur="clearSearchResults()" class="form-control" placeholder="Find...">
                 </div>
+                <ul ng-if="searchResults" class="list-unstyled" id="search-results">
+                    <li ng-repeat="user in searchResults">
+                        <a href="#/user/{{user.username}}/wall/">
+                            <img ng-src="{{user.profileImageData}}" default-image="{{defaultImage}}"
+                                 alt="Profile image" class="search-result-image"/>
+                            <span class="username">{{user.name}}</span>
+                        </a>
+                        <hr class="delimiter"/>
+                    </li>
+                </ul>
             </form>
 
             <!--navigation-->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#/" id="profile-data-navbar">
+                    <a href="#/user/{{me.username}}/wall/" id="profile-data-navbar">
                         <div>
                             <img ng-src="{{me.profileImage}}" alt="Profile image" id="profile-image-navbar"/>
                             <span>{{me.fullName}}</span>
@@ -43,12 +54,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#/settings/edit/profile/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Edit profile">
+                    <a href="#/settings/edit/profile/" ng-click="" data-toggle="tooltip"
+                       data-placement="bottom" title="Edit profile">
                         <span class="fa fa-cogs fa-lg"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#/settings/edit/password/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Change password">
+                    <a href="#/settings/edit/password/" ng-click="" data-toggle="tooltip"
+                       data-placement="bottom" title="Change password">
                         <span class="fa fa-key fa-lg"></span>
                     </a>
                 </li>
@@ -58,8 +71,6 @@
                     </a>
                 </li>
             </ul>
-
-
         </div>
     </div>
 </nav>
