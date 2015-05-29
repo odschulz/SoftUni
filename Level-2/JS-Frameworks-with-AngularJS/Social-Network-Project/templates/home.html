@@ -3,5 +3,12 @@
 
 <main class="container">
     <div ng-if="!isLogged()" guest-welcome-screen></div>
-    <div ng-if="isLogged()" news-feed></div>
+
+    <div ng-if="isLogged()">
+
+        <div class="form-group col-md-9" news-feed></div>
+
+        <div class="media col-md-3" friends-preview=""></div>
+
+    </div>
 </main>

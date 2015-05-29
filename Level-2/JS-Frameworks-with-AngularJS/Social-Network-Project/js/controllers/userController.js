@@ -14,9 +14,11 @@ app.controller('UserController', ['$scope', '$location', '$timeout', 'authentica
                 usSpinnerService.stop('spinner-1');
                 authentication.saveUser(data);
                 $location.path('/');
+                Notification.success({message: 'Login successful!', delay: 4000});
             }, function (error) {
                 usSpinnerService.stop('spinner-1');
-                Notification.error({message: error.data.error_description, delay: 4000});
+                Notification.error({message: 'Login unsuccessful!', delay: 4000});
+                console.log(error);
             });
     };
 
@@ -31,9 +33,11 @@ app.controller('UserController', ['$scope', '$location', '$timeout', 'authentica
                 usSpinnerService.stop('spinner-1');
                 authentication.saveUser(data);
                 $location.path('/');
+                Notification.success({message: 'Registered successfully!', delay: 4000});
             }, function (error) {
                 usSpinnerService.stop('spinner-1');
                 Notification.error({message: error.data.message, delay: 4000});
+                console.log(error);
             });
     };
 
@@ -61,9 +65,11 @@ app.controller('UserController', ['$scope', '$location', '$timeout', 'authentica
             .then(function (data) {
                 usSpinnerService.stop('spinner-1');
                 authentication.removeUser();
+                Notification.success({message: 'Logout successful!', delay: 4000});
             }, function (error) {
                 usSpinnerService.stop('spinner-1');
                 Notification.error({message: error.data.message, delay: 4000});
+                console.log(error);
             });
     };
 
@@ -90,8 +96,6 @@ app.controller('UserController', ['$scope', '$location', '$timeout', 'authentica
 
     $scope.clearSearchResults = function () {
         $timeout(function() {
-            console.log(this);
-
             $scope.searchResults = undefined;
             $scope.searchPhrase = '';
         }, 100);
