@@ -65,14 +65,17 @@
                 <div class="col-lg-6">
                     <div class="well">
                         <div class="form-group">
-                            <img class="thumbnail" id="profile-image" ng-src="{{userData.profileImageData}}" required>
-                            <div >
+                            <div class="col-xs-6">
+                                <img class="image-responsive" id="profile-image" ng-src="{{userData.profileImageData}}" required>
+                            </div>
+                            <div class="col-xs-6">
+                                <h2>Profile image</h2>
                                 <span>Size limit: 128KB</span>
-                                <div>
-                                    <input type="file" id="profile-image-button"
-                                           onchange="angular.element(this).scope().putImageInUserData(this)" class="hidden"/>
-                                    <label for="profile-image-button" class="btn btn-info" >Select file</label>
-                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <input type="file" id="profile-image-button"
+                                       onchange="angular.element(this).scope().putImageInUserData(this)" class="hidden"/>
+                                <label for="profile-image-button" class="btn btn-info" >Select file</label>
                             </div>
                         </div>
                     </div>
