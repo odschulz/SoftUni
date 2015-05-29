@@ -4,8 +4,21 @@ body {
     /*background: #E1BEE7;*/
 }
 
+.navbar-collapse {
+    overflow-x: auto;
+}
+
 .hidden {
     display: none;
+}
+
+#profile-data-navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#profile-image-navbar {
+    height: 50px;
 }
 
 #edit-profile-submit-group {

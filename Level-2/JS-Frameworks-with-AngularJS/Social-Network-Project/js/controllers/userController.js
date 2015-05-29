@@ -16,7 +16,7 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
                 $location.path('/');
             }, function (error) {
                 usSpinnerService.stop('spinner-1');
-                Notification.error({message: error.data.error_description, delay: 2000});
+                Notification.error({message: error.data.error_description, delay: 4000});
             });
     };
 
@@ -33,7 +33,24 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
                 $location.path('/');
             }, function (error) {
                 usSpinnerService.stop('spinner-1');
-                Notification.error({message: error.data.message, delay: 2000});
+                Notification.error({message: error.data.message, delay: 4000});
+            });
+    };
+
+    $scope.getMyProfilePreviewData = function () {
+        var myUsername = authentication.getUsername();
+        usSpinnerService.spin('spinner-1');
+
+        userData.getUserPreviewData(getAuthenticationHeaders(), myUsername)
+            .$promise
+            .then(function (data) {
+                usSpinnerService.stop('spinner-1');
+                $scope.me = {} || $scope.me;
+                $scope.me.fullName = data.name;
+                $scope.me.profileImage = data.profileImageData;
+            }, function (error) {
+                usSpinnerService.stop('spinner-1');
+                Notification.error({message: 'Could not retrieve your profile data from the server!', delay: 4000});
             });
     };
 

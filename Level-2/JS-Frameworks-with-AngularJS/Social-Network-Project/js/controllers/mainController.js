@@ -3,5 +3,7 @@ app.controller('MainController', ['$scope', 'authentication', function ($scope, 
         return authentication.isLogged();
     };
 
+    $scope.username = authentication.getUsername();
+
 
 }]);

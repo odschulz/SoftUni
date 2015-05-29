@@ -35,6 +35,7 @@ app.factory('authentication', ['$localStorage', function($localStorage){
         return $localStorage;
     }
 
+
     return {
         isLogged: checkForAccessToken,
         saveUser: saveUserData,

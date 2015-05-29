@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav ng-init="getMyProfilePreviewData()" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <!--collapse button-->
@@ -24,6 +24,14 @@
 
             <!--navigation-->
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#/" id="profile-data-navbar">
+                        <div>
+                            <img ng-src="{{me.profileImage}}" alt="Profile image" id="profile-image-navbar"/>
+                            <span>{{me.fullName}}</span>
+                        </div>
+                    </a>
+                </li>
                 <li>
                     <a href="#/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="News feed">
                         <span class="fa fa-home fa-lg"></span>

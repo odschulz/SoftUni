@@ -63,6 +63,20 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
             .get();
     }
 
+    function getUserPreviewData(authenticationHeaders, username) {
+
+        return $resource(
+            BASE_SERVICE_URL + 'users/' + username + '/preview',
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
     function changePassword(data, authenticationHeaders) {
 
         return $resource(
@@ -96,6 +110,7 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
         logout: logoutUser,
         getDataAboutMe: getDataAboutMe,
         changePassword: changePassword,
-        editProfile: editProfile
+        editProfile: editProfile,
+        getUserPreviewData: getUserPreviewData
     }
 }]);
