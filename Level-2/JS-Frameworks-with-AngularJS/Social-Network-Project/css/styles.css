@@ -76,6 +76,7 @@ form#edit-profile-form img#profile-image {
 
 form#edit-profile-form img#cover-image {
     margin: 0 auto;
+    max-height: 315px;
 }
 
 #search-results {
