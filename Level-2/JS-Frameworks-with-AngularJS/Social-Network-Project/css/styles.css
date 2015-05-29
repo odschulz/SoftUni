@@ -70,7 +70,12 @@ form#edit-profile-form img#profile-image {
     max-height: 136px;
 }
 
+.cover-image-container {
+    margin: 0 !important;
+}
+
 form#edit-profile-form img#cover-image {
+    margin: 0 auto;
 }
 
 #search-results {
