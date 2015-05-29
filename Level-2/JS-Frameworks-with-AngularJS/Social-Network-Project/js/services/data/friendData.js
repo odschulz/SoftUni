@@ -14,8 +14,24 @@ app.factory('friendData', ['$resource', 'BASE_SERVICE_URL',function ($resource, 
             .get();
     }
 
+    function getMyFriendsList(authenticationHeaders) {
+
+        return $resource(
+            BASE_SERVICE_URL + 'me/friends',
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    isArray: true,
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
     return {
-        getMyFriendsPreviewData: getMyFriendsPreviewData
+        getMyFriendsPreviewData: getMyFriendsPreviewData,
+        getMyFriendsList: getMyFriendsList
     }
 }]);
 

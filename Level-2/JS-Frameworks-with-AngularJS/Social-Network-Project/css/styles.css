@@ -113,3 +113,10 @@ ul > li {
     color: black;
     text-align: center;
 }
+
+.friend-list-name {
+    margin: 0;
+    font-size: 22px;
+    color: black;
+    text-align: center;
+}
