@@ -77,10 +77,24 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
             .get();
     }
 
-    function changePassword(data, authenticationHeaders) {
-
+    function searchForUsers(authenticationHeaders, searchPhrase) {
         return $resource(
-            BASE_SERVICE_URL + 'me/changepassword',
+            BASE_SERVICE_URL + 'users/search?searchTerm=' + searchPhrase,
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    isArray: true,
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
+
+    function editProfile(data, authenticationHeaders) {
+        return $resource(
+            BASE_SERVICE_URL + 'me',
             null,
             {
                 'put': {
@@ -90,10 +104,11 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
             })
             .put(data);
     }
+    
+    function changePassword(data, authenticationHeaders) {
 
-    function editProfile(data, authenticationHeaders) {
         return $resource(
-            BASE_SERVICE_URL + 'me',
+            BASE_SERVICE_URL + 'me/changepassword',
             null,
             {
                 'put': {
@@ -111,6 +126,7 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
         getDataAboutMe: getDataAboutMe,
         changePassword: changePassword,
         editProfile: editProfile,
-        getUserPreviewData: getUserPreviewData
+        getUserPreviewData: getUserPreviewData,
+        searchForUsers: searchForUsers
     }
 }]);

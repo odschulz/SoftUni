@@ -31,6 +31,32 @@ form#edit-profile-form img#profile-image {
     max-height: 136px;
 }
 
-
 form#edit-profile-form img#cover-image {
+}
+
+#search-results {
+    position: absolute;
+    background-color: #F5F5F5;
+    padding: 0;
+}
+
+#search-results > li {
+    margin: 0;
+}
+
+#search-results > li > a {
+    color: black;
+}
+
+.search-result-image {
+    max-width: 60px !important;
+    max-height: 60px;
+}
+
+ul > li {
+    margin-left: 10px;
+}
+
+.delimiter {
+    margin: 2px 0;
 }
