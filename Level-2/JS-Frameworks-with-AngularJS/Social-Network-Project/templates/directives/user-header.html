@@ -1,41 +1,57 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
+            <!--collapse button-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--header-->
             <a class="navbar-brand" href="#/">Social Network</a>
         </div>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="#/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="News feed">
-                    <span class="fa fa-home fa-lg"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Friend requests">
-                    <span class="fa fa-user-plus fa-lg"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#/settings/edit/profile/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Edit profile">
-                    <span class="fa fa-cogs fa-lg"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#/settings/edit/password/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Change password">
-                    <span class="fa fa-key fa-lg"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#/" ng-click="logout()" data-toggle="tooltip" data-placement="bottom" title="Logout">
-                    <span class="fa fa-sign-out fa-lg"></span>
-                </a>
-            </li>
-        </ul>
+        <!--collapsable navigation-->
+        <div class="collapse navbar-collapse" id="user-navbar">
 
-        <form class="navbar-form navbar-left">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Find...">
-            </div>
-        </form>
+            <!--search bar-->
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Find...">
+                </div>
+            </form>
+
+            <!--navigation-->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="News feed">
+                        <span class="fa fa-home fa-lg"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Friend requests">
+                        <span class="fa fa-user-plus fa-lg"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/settings/edit/profile/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Edit profile">
+                        <span class="fa fa-cogs fa-lg"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/settings/edit/password/" ng-click="" data-toggle="tooltip" data-placement="bottom" title="Change password">
+                        <span class="fa fa-key fa-lg"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/" ng-click="logout()" data-toggle="tooltip" data-placement="bottom" title="Logout">
+                        <span class="fa fa-sign-out fa-lg"></span>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
     </div>
 </nav>
