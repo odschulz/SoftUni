@@ -55,4 +55,11 @@ app.controller('UserController', ['$scope', '$location','authentication', 'Notif
         return authentication.getHeaders();
     }
 
+    $scope.test = function () {
+        console.log('test');
+        console.log($scope);
+        console.log($scope.$scope);
+
+    }
+
 }]);

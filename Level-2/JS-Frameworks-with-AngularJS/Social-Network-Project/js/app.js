@@ -1,9 +1,7 @@
 var app = angular.module('socialNetworkApp', ['ngResource', 'ngRoute', 'ngStorage', 'angularSpinner', 'ui-notification']);
 
 app.config(['$routeProvider',
-    function($routeProvider, $httpProvider) {
-        //$httpProvider.interceptors.push('authHttpResponseInterceptor');
-
+    function($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'templates/home.html',
@@ -11,7 +9,7 @@ app.config(['$routeProvider',
             })
             .when('/login/', {
                 templateUrl: 'templates/login-form.html',
-                controller: 'UserController',
+                controller: 'MainController',
                 resolve: {
                     authorized: function ($localStorage, $location) {
                         if ($localStorage.access_token) {
@@ -22,7 +20,7 @@ app.config(['$routeProvider',
             })
             .when('/register', {
                 templateUrl: 'templates/register-form.html',
-                controller: 'UserController',
+                controller: 'MainController',
                 resolve: {
                     authorized: function ($localStorage, $location) {
                         if ($localStorage.access_token) {
@@ -33,7 +31,7 @@ app.config(['$routeProvider',
             })
             .when('/settings/edit/profile/', {
                 templateUrl: 'templates/edit-profile-form.html',
-                controller: 'EditUserController',
+                controller: 'MainController',
                 resolve: {
                     authorized: function ($localStorage, $location) {
                         if (!$localStorage.access_token) {
@@ -44,7 +42,7 @@ app.config(['$routeProvider',
             })
             .when('/settings/edit/password/', {
                 templateUrl: 'templates/edit-password-form.html',
-                controller: 'EditUserController',
+                controller: 'MainController',
                 resolve: {
                     authorized: function ($localStorage, $location) {
                         if (!$localStorage.access_token) {

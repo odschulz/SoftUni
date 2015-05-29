@@ -1,4 +1,7 @@
-<div class="container">
+<header ng-if="!isLogged()" guest-header></header>
+<header ng-if="isLogged()" user-header></header>
+
+<main class="container">
     <div ng-if="!isLogged()" guest-welcome-screen></div>
-    <div ng-if="isLogged()" ng-include="'templates/news-feed.html'"></div>
-</div>
+    <div ng-if="isLogged()" news-feed></div>
+</main>

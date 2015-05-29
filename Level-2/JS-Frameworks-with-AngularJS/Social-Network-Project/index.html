@@ -13,13 +13,6 @@
 </head>
 <body>
 
-<header ng-controller="MainController">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div ng-if="isLogged()" user-header></div>
-        <div ng-if="!isLogged()" guest-header></div>
-    </nav>
-</header>
-
 <div ng-view></div>
 
 <span us-spinner spinner-key="spinner-1"></span>
@@ -46,9 +39,12 @@
 <script src="js/controllers/userController.js"></script>
 
 <!--Directives-->
+<script src="js/directives/editUserController.js"></script>
 <script src="js/directives/equals.js"></script>
 <script src="js/directives/guestHeader.js"></script>
 <script src="js/directives/guestWelcomeScreen.js"></script>
+<script src="js/directives/newsFeed.js"></script>
+<script src="js/directives/userController.js"></script>
 <script src="js/directives/userHeader.js"></script>
 
 <!--Services-->

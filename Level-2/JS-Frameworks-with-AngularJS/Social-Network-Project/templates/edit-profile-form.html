@@ -1,4 +1,6 @@
-<div class="container" ng-init="getUserData()">
+<header user-header></header>
+
+<main class="container" edit-user-controller ng-init="getUserData()">
     <div class="row col-lg-10 col-lg-offset-1">
         <form class="form-horizontal" name="editProfileForm" ng-submit="editProfile()" id="edit-profile-form">
             <fieldset>
@@ -93,7 +95,6 @@
                     </div>
                 </div>
             </fieldset>
-
         </form>
     </div>
-</div>
+</main>

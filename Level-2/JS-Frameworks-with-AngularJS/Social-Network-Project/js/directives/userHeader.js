@@ -3,6 +3,6 @@ app.directive('userHeader', function () {
         controller: 'UserController',
         restrict: 'A',
         templateUrl: 'templates/directives/user-header.html',
-        replace: true
+        replace: false
     };
 });
