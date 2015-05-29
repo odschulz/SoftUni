@@ -23,7 +23,7 @@
                 </div>
                 <ul ng-if="searchResults" class="list-unstyled" id="search-results">
                     <li ng-repeat="user in searchResults">
-                        <a href="#/user/{{user.username}}/wall/">
+                        <a href="#/users/{{user.username}}/">
                             <img ng-src="{{user.profileImageData}}" default-image="{{defaultImage}}"
                                  alt="Profile image" class="search-result-image"/>
                             <span class="username">{{user.name}}</span>
@@ -36,7 +36,7 @@
             <!--navigation-->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#/user/{{me.username}}/wall/" id="profile-data-navbar">
+                    <a href="#/users/{{me.username}}/" id="profile-data-navbar">
                         <div>
                             <img ng-src="{{me.profileImage}}" alt="Profile image" id="profile-image-navbar"/>
                             <span>{{me.fullName}}</span>
@@ -54,13 +54,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#/settings/edit/profile/" ng-click="" data-toggle="tooltip"
+                    <a href="#/profile/" ng-click="" data-toggle="tooltip"
                        data-placement="bottom" title="Edit profile">
                         <span class="fa fa-cogs fa-lg"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#/settings/edit/password/" ng-click="" data-toggle="tooltip"
+                    <a href="#/profile/password/" ng-click="" data-toggle="tooltip"
                        data-placement="bottom" title="Change password">
                         <span class="fa fa-key fa-lg"></span>
                     </a>

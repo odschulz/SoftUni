@@ -29,7 +29,7 @@ app.config(['$routeProvider',
                     }
                 }
             })
-            .when('/user/:username/wall', {
+            .when('/users/:username/', {
                 templateUrl: 'templates/user-wall.html',
                 controller: 'MainController',
                 resolve: {
@@ -40,7 +40,7 @@ app.config(['$routeProvider',
                     }
                 }
             })
-            .when('/settings/edit/profile/', {
+            .when('/profile/', {
                 templateUrl: 'templates/edit-profile-form.html',
                 controller: 'MainController',
                 resolve: {
@@ -51,7 +51,7 @@ app.config(['$routeProvider',
                     }
                 }
             })
-            .when('/settings/edit/password/', {
+            .when('/profile/password/', {
                 templateUrl: 'templates/edit-password-form.html',
                 controller: 'MainController',
                 resolve: {

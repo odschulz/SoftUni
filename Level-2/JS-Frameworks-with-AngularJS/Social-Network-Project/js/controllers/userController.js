@@ -109,6 +109,6 @@ app.controller(
                 $timeout(function() {
                     $scope.searchResults = undefined;
                     $scope.searchPhrase = '';
-                }, 100);
+                }, 500);
             }
         }]);
