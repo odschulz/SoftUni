@@ -30,7 +30,7 @@ app.controller(
                         $scope.friendsPreviewData = friendsPreviewData;
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
-                        Notification.error({message: 'Could not retriece friends data!', delay: 4000});
+                        Notification.error({message: 'Could not retrieve friends data!', delay: 4000});
                         console.log(error);
                     });
             };

@@ -1,1 +1,46 @@
-<div class="well"><h1>news feed</h1></div>
+<div class="well" id="newsfeed-container">
+    <h1>News feed:</h1>
+    <div ng-init="getNewsFeed()" infinite-scroll="getNewsFeed()">
+        <ul class="media-list">
+            <li ng-repeat="post in posts" class="media">
+                <div class="well post-container">
+                    <div class="media-left">
+                        <a href="#/users/{{post.author.name}}">
+                            <img ng-src="{{post.author.profileImageData}}" default-image="{{defaultImage}}"
+                                 class="media-object post-author-image" alt="Profile Image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading post-header">
+                            <a href="#/users/{{post.author.name}}" >{{post.author.name}}</a>
+                            <span>posted on </span>
+                            <a href="#/users/{{post.wallOwner.name}}">{{post.wallOwner.name}}</a>
+                            <span>'s wall</span>
+                        </h4>
+                        <div class="post-date">{{post.date | date: "HH:mm, dd MMM, yy"}}</div>
+                        <p>{{post.postContent}}</p>
+                        <hr/>
+                        <!-- Nested media object -->
+                        <div ng-repeat="comment in post.comments" class="media">
+                            <div class="media-left">
+                                <a href="#/users/{{comment.author.name}}">
+                                    <img ng-src="{{comment.author.profileImageData}}" default-image="{{defaultImage}}"
+                                         class="media-object comment-author-image" alt="Profile Image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading comment-header">
+                                    <a href="#/users/{{comment.author.name}}">{{comment.author.name}}</a>
+                                </h4>
+                                <div class="comment-date">{{comment.date | date: "HH:mm, dd MMM, yy"}}</div>
+                                <p>{{comment.commentContent}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
