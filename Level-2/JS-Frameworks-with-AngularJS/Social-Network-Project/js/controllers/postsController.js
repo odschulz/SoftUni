@@ -22,6 +22,7 @@ app.controller(
                     .then(function (data) {
                         usSpinnerService.stop('spinner-1');
                         $scope.posts = data;
+                        console.log(data);
 
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
@@ -32,9 +33,9 @@ app.controller(
 
             $scope.newComment = {};
 
-            $scope.addCommentToPost = function (postId) {
+            $scope.addCommentToPost = function (post) {
                 var newComment = {};
-                newComment.commentContent = $scope.newComment[postId];
+                newComment.commentContent = $scope.newComment[post.id];
 
                 if (newComment.commentContent) {
                     if (newComment.commentContent.length < 2) {
@@ -44,19 +45,15 @@ app.controller(
 
                     usSpinnerService.spin('spinner-1');
 
-                    postsData.addCommentToPost(getAuthenticationHeaders(), postId, newComment)
+                    postsData.addCommentToPost(getAuthenticationHeaders(), post.id, newComment)
                         .$promise
                         .then(function (data) {
                             usSpinnerService.stop('spinner-1');
 
-                            var post = $scope.posts.filter(function (post) {
-                                return post.id == postId;
-                            })[0];
-
                             // push new comment in post comments data
                             post.comments.unshift(data);
                             // clear the text area for the comment input
-                            $scope.newComment[postId] = undefined;
+                            $scope.newComment[post.id] = undefined;
                             // increase total comments amount in post
                             post.totalCommentsCount ++;
 
@@ -66,49 +63,101 @@ app.controller(
                             console.log(error);
                         });
 
-
-
-
                 } else {
                     Notification.error({message: 'Cannot add an empty comment!', delay: 4000});
                 }
             };
 
-            $scope.getPostComments = function (postId) {
+            $scope.getPostComments = function (post) {
                 usSpinnerService.spin('spinner-1');
-                postsData.getPostComments(getAuthenticationHeaders(), postId)
+                postsData.getPostComments(getAuthenticationHeaders(), post.id)
                     .$promise
                     .then(function (data) {
                         usSpinnerService.stop('spinner-1');
 
-                        var post = $scope.posts.filter(function (post) {
-                            return post.id == postId;
-                        })[0];
-
                         post.comments = data;
 
-                        $scope.commentsViews.push(postId);
+                        $scope.commentsViews.push(post.id);
 
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
-                        Notification.error({message: 'Could not add comment!', delay: 4000});
+                        Notification.error({message: 'Could not get all comment for post!', delay: 4000});
                         console.log(error);
                     });
 
             };
 
 
-            $scope.getPostCommentsPreview = function (postId) {
-                var index = $scope.commentsViews.indexOf(postId);
-                var post = $scope.posts.filter(function (post) {
-                    return post.id == postId;
-                })[0];
+            $scope.getPostCommentsPreview = function (post) {
+                var index = $scope.commentsViews.indexOf(post.id);
 
                 post.comments = post.comments.slice(0, 3);
                 if (index > -1) {
                     $scope.commentsViews.splice(index, 1);
                 }
 
+            };
+
+            $scope.likePost = function (post) {
+
+                postsData.likePost(getAuthenticationHeaders(), post.id)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+
+                        post.liked = true;
+                        post.likesCount ++;
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not like post!', delay: 4000});
+                        console.log(error);
+                    });
+            };
+
+            $scope.unlikePost = function (post) {
+                postsData.unLikePost(getAuthenticationHeaders(), post.id)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+
+                        post.liked = false;
+                        post.likesCount --;
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not unlike post!', delay: 4000});
+                        console.log(error);
+                    });
+            };
+
+            $scope.likeComment = function (post, comment) {
+
+                postsData.likeComment(getAuthenticationHeaders(), post.id, comment.id)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+
+                        comment.liked = true;
+                        comment.likesCount ++;
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not like post!', delay: 4000});
+                        console.log(error);
+                    });
+            };
+
+            $scope.unlikeComment = function (post, comment) {
+                postsData.unlikeComment(getAuthenticationHeaders(), post.id, comment.id)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+
+                        comment.liked = false;
+                        comment.likesCount --;
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not unlike post!', delay: 4000});
+                        console.log(error);
+                    });
             };
 
             function getAuthenticationHeaders() {

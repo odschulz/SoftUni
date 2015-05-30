@@ -45,11 +45,67 @@ app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', 'PAGE_SIZE',function 
             .get();
     }
 
+    function likePost(authenticationHeaders, postId) {
+        return $resource(
+            BASE_SERVICE_URL + '/Posts/' + postId + '/likes',
+            null,
+            {
+                'post': {
+                    method: 'POST',
+                    headers: authenticationHeaders
+                }
+            })
+            .post();
+    }
+
+    function unLikePost(authenticationHeaders, postId) {
+        return $resource(
+            BASE_SERVICE_URL + '/Posts/' + postId + '/likes',
+            null,
+            {
+                'del': {
+                    method: 'DELETE',
+                    headers: authenticationHeaders
+                }
+            })
+            .del();
+    }
+
+    function likeComment(authenticationHeaders, postId, commentId) {
+        return $resource(
+            BASE_SERVICE_URL + '/Posts/' + postId + '/comments/' + commentId + '/likes',
+            null,
+            {
+                'post': {
+                    method: 'POST',
+                    headers: authenticationHeaders
+                }
+            })
+            .post();
+    }
+
+    function unlikeComment(authenticationHeaders, postId, commentId) {
+        return $resource(
+            BASE_SERVICE_URL + '/Posts/' + postId + '/comments/' + commentId + '/likes',
+            null,
+            {
+                'del': {
+                    method: 'DELETE',
+                    headers: authenticationHeaders
+                }
+            })
+            .del();
+    }
+
 
     return {
         getNewsFeed: getNewsFeed,
         addCommentToPost : addCommentToPost,
-        getPostComments: getPostComments
+        getPostComments: getPostComments,
+        likePost: likePost,
+        unLikePost: unLikePost,
+        likeComment: likeComment,
+        unlikeComment: unlikeComment
     }
 }]);
 

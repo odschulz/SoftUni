@@ -51,6 +51,14 @@ body {
     display: none;
 }
 
+.no-top-margin {
+    margin-top: 0;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+
 .no-padding {
     padding: 0 !important;
     margin: 0 !important;
