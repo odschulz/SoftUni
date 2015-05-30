@@ -20,7 +20,7 @@ app.controller(
                     .then(function (data) {
                         usSpinnerService.stop('spinner-1');
                         $scope.posts = data;
-                        console.log(data);
+
 
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
@@ -30,11 +30,11 @@ app.controller(
             };
 
             $scope.newComment = {
-                commentContent: undefined
             };
 
             $scope.addCommentToPost = function (postId) {
-                var newComment = $scope.newComment;
+                var newComment = {};
+                newComment.commentContent = $scope.newComment[postId];
 
                 if (newComment.commentContent) {
                     if (newComment.commentContent.length < 2) {
@@ -47,14 +47,16 @@ app.controller(
                     postsData.addCommentToPost(getAuthenticationHeaders(), postId, newComment)
                         .$promise
                         .then(function (data) {
-                            console.log(data);
-
                             usSpinnerService.stop('spinner-1');
+
                             var post = $scope.posts.filter(function (post) {
                                 return post.id == postId;
                             })[0];
 
+                            // push new comment in post comments data
                             post.comments.unshift(data);
+                            // clear the text area for the comment input
+                            $scope.newComment[postId] = undefined;
 
                         }, function (error) {
                             usSpinnerService.stop('spinner-1');
@@ -68,9 +70,6 @@ app.controller(
                 } else {
                     Notification.error({message: 'Cannot add an empty comment!', delay: 4000});
                 }
-
-
-                //postsData.addCommentToPost(getAuthenticationHeaders())
             };
 
             function getAuthenticationHeaders() {

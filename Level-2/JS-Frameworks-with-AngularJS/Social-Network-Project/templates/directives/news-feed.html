@@ -25,7 +25,7 @@
                                 <div class="add-comment-container">
                                     <img ng-src="{{me.profileImage}}" default-image="{{defaultImage}}" alt="Profile image"
                                          class="add-comment-image"/>
-                                    <textarea ng-model="newComment.commentContent" class="comment-input"></textarea>
+                                    <textarea ng-model="newComment[post.id]" class="comment-input"></textarea>
                                     <button class="add-comment-button">Add</button>
                                 </div>
                             </form>
