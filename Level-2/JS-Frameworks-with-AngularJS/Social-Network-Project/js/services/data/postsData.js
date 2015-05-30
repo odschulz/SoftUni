@@ -1,10 +1,10 @@
 
-app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', 'PAGE_SIZE',function ($resource, BASE_SERVICE_URL, PAGE_SIZE) {
+app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', function ($resource, BASE_SERVICE_URL) {
 
-    function getNewsFeed(authenticationHeaders) {
+    function getNewsFeed(authenticationHeaders, startPostId, pageSize) {
 
         return $resource(
-            BASE_SERVICE_URL + '/me/feed?StartPostId=&PageSize=' + PAGE_SIZE,
+            BASE_SERVICE_URL + '/me/feed?StartPostId=' + startPostId + '&PageSize=' + pageSize,
             null,
             {
                 'get': {

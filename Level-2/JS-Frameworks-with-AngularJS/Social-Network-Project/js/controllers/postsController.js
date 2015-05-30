@@ -7,23 +7,28 @@ app.controller(
         '$route',
         'authentication',
         'Notification',
+        'PAGE_SIZE',
         'postsData',
         'userData',
         'usSpinnerService',
-        function ($scope, $location, $timeout, $route, authentication, Notification, postsData, userData, usSpinnerService) {
+        function ($scope, $location, $timeout, $route, authentication, Notification, PAGE_SIZE, postsData, userData, usSpinnerService) {
 
+            var startPostId = '';
             $scope.commentsViews = [];
+            $scope.posts = [    ];
 
             $scope.getNewsFeed = function () {
                 usSpinnerService.spin('spinner-1');
 
-                postsData.getNewsFeed(getAuthenticationHeaders())
+                postsData.getNewsFeed(getAuthenticationHeaders(), startPostId, PAGE_SIZE)
                     .$promise
                     .then(function (data) {
-                        usSpinnerService.stop('spinner-1');
-                        $scope.posts = data;
-                        console.log(data);
+                        $scope.posts = $scope.posts.concat(data);
+                        if($scope.posts.length > 0){
+                            startPostId = $scope.posts[$scope.posts.length - 1].id;
+                        }
 
+                        usSpinnerService.stop('spinner-1');
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
                         Notification.error({message: 'Could not retrieve news feed!', delay: 4000});
