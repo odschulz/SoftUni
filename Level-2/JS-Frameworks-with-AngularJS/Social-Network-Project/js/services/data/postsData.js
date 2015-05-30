@@ -30,10 +30,26 @@ app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', 'PAGE_SIZE',function 
             .post(comment);
     }
 
+    function getPostComments(authenticationHeaders, postId) {
+
+        return $resource(
+            BASE_SERVICE_URL + '/posts/' + postId + '/comments',
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    headers: authenticationHeaders,
+                    isArray: true
+                }
+            })
+            .get();
+    }
+
 
     return {
         getNewsFeed: getNewsFeed,
-        addCommentToPost : addCommentToPost
+        addCommentToPost : addCommentToPost,
+        getPostComments: getPostComments
     }
 }]);
 

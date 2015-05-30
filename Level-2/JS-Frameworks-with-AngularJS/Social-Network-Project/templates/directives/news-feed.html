@@ -32,6 +32,16 @@
                             <div class="clearfix"></div>
                         </div>
                         <!-- Nested media object -->
+                        <div>
+                            <span>Total comments: {{post.totalCommentsCount}}</span>
+                            <span ng-if="post.totalCommentsCount > post.comments.length
+                            ">
+                                <a href="" ng-click="getPostComments(post.id)">View</a>
+                            </span>
+                            <span ng-if="commentsViews.indexOf(post.id) > -1">
+                                <a href="" ng-click="getPostCommentsPreview(post.id)">Hide</a>
+                            </span>
+                        </div>
                         <div ng-repeat="comment in post.comments" class="media">
                             <div class="media-left">
                                 <a href="#/users/{{comment.author.name}}">
