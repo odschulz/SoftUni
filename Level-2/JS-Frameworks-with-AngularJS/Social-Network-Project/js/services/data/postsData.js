@@ -16,9 +16,24 @@ app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', 'PAGE_SIZE',function 
             .get();
     }
 
+    function addCommentToPost(authenticationHeaders, postId, comment) {
+
+        return $resource(
+            BASE_SERVICE_URL + '/posts/' + postId + '/comments',
+            null,
+            {
+                'post': {
+                    method: 'POST',
+                    headers: authenticationHeaders
+                }
+            })
+            .post(comment);
+    }
+
 
     return {
-        getNewsFeed: getNewsFeed
+        getNewsFeed: getNewsFeed,
+        addCommentToPost : addCommentToPost
     }
 }]);
 

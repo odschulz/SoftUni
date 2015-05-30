@@ -110,5 +110,6 @@ app.controller(
                     $scope.searchResults = undefined;
                     $scope.searchPhrase = '';
                 }, 500);
-            }
+            };
+
         }]);

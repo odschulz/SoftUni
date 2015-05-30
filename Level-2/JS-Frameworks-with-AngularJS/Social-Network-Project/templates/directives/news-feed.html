@@ -20,6 +20,17 @@
                         <div class="post-date">{{post.date | date: "HH:mm, dd MMM, yy"}}</div>
                         <p>{{post.postContent}}</p>
                         <hr/>
+                        <div>
+                            <form user-controller class="form-horizontal" ng-submit="addCommentToPost(post.id)" name="commentForm">
+                                <div class="add-comment-container">
+                                    <img ng-src="{{me.profileImage}}" default-image="{{defaultImage}}" alt="Profile image"
+                                         class="add-comment-image"/>
+                                    <textarea ng-model="newComment.commentContent" class="comment-input"></textarea>
+                                    <button class="add-comment-button">Add</button>
+                                </div>
+                            </form>
+                            <div class="clearfix"></div>
+                        </div>
                         <!-- Nested media object -->
                         <div ng-repeat="comment in post.comments" class="media">
                             <div class="media-left">
