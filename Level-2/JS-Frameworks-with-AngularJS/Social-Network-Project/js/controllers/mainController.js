@@ -22,12 +22,12 @@ app.controller(
                 $scope.userPreviewData = userPreviewData;
                 $scope.userPreviewShown = userPreviewData.username;
                 console.log($scope.userPreviewShown);
-                
+
             };
 
             $scope.closeUserPreview = function() {
                 $scope.userPreviewShown = undefined;
             };
 
-
+            $scope.friendsRepo = {};
         }]);

@@ -39,6 +39,7 @@ app.controller(
                 $scope.currentUser = $scope.currentUser || $scope.me.username;
                 usSpinnerService.spin('spinner-1');
                 $scope.friendsOwner = $routeParams['username'];
+                $scope.friendsRepo.names = [];
 
                 friendData.getMyFriendsPreviewData(getAuthenticationHeaders())
                     .$promise
@@ -51,6 +52,13 @@ app.controller(
                         } else {
                             friendsPreviewData = data.friends;
                         }
+
+                        for (var i = 0; i < data.friends.length; i += 1) {
+                            $scope.friendsRepo.names.push(data.friends[i].username);
+                        }
+
+                        console.log($scope.friendsRepo);
+
 
                         friendsPreviewData.totalCount = data.totalCount;
                         $scope.friendsPreviewData = friendsPreviewData;
@@ -131,7 +139,7 @@ app.controller(
                         console.log(error);
                     });
 
-                
+
             };
 
             $scope.approveFriendRequest = function (request) {

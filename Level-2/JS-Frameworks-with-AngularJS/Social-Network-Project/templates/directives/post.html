@@ -43,7 +43,7 @@
             </div>
             <hr class="no-top-margin"/>
             <div>
-                <form ng-if="post.author.isFriend" user-controller class="form-horizontal" ng-submit="addCommentToPost(post)" name="commentForm">
+                <form ng-if="post.author.isFriend || post.author.username === me.username" user-controller class="form-horizontal" ng-submit="addCommentToPost(post)" name="commentForm">
                     <div class="add-comment-container">
                         <img ng-src="{{me.profileImage}}" default-image="{{defaultImage}}" alt="Profile image"
                              class="add-comment-image"/>
@@ -78,7 +78,9 @@
                     <div class="comment-date">{{comment.date | date: "HH:mm, dd MMM, yy"}}</div>
                     <p>{{comment.commentContent}}</p>
                     <div>
-                        <a href="" ng-if="!comment.liked" ng-click="likeComment(post, comment)">Like</a>
+                        <a href=""
+                           ng-if="!comment.liked && (friendsRepo.names.indexOf(comment.author.username) > -1 || comment.author.username === me.username)"
+                           ng-click="likeComment(post, comment)">Like</a>
                         <a href="" ng-if="comment.liked" ng-click="unlikeComment(post, comment)">Unlike</a>
                         <span class="fa fa-thumbs-o-up"></span>
                         <span>{{comment.likesCount}}</span>
