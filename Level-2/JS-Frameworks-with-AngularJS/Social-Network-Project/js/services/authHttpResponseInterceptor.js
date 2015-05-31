@@ -12,6 +12,8 @@ app.factory('authHttpResponseInterceptor',['$q','$location', '$localStorage', fu
             if (rejection.status === 401) {
                 $localStorage.$reset();
                 $location.path('/');
+            } else if(rejection.status === 404){
+                $location.path('/not-found');
             }
             return $q.reject(rejection);
         }

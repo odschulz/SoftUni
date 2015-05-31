@@ -15,4 +15,6 @@ app.controller(
             $scope.me.username = authentication.getUsername();
             $scope.defaultImage = DEFAULT_IMAGE;
             $scope.isOwnWall = $scope.me.username === $routeParams['username'];
+            
+            
         }]);

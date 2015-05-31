@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div id="user-wall-header-wrapper">
+        <img ng-src="{{wallOwner.coverImageData}}" default-image="{{defaultImage}}" alt="Cover Image" id="user-wall-cover-image"/>
+        <div id="user-wall-profile-image-wrapper">
+            <img ng-src="{{wallOwner.profileImageData}}" default-image="{{defaultImage}}" alt="Profile Image" id="user-wall-profile-image"/>
+            <span class="user-wall-username"><a href="#/users/{{wallOwner.username}}">{{wallOwner.name}}</a></span>
+            <div>
+                <div ng-if="wallOwner.isFriend" class="btn btn-success" disabled>
+                    <span>Friends</span>
+                </div>
+                <div ng-if="wallOwner.hasPendingRequest" class="btn btn-warning" disabled>
+                    <span>Pending</span>
+                </div>
+                <div ng-if="wallOwner.isNotFriend" friend-controller ng-click="sendFriendRequest(wallOwner.username)" class="btn btn-danger">
+                    <span>Add Friend</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

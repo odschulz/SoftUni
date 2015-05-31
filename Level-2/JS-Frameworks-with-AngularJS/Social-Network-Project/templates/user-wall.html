@@ -1,11 +1,13 @@
 <header user-header></header>
 
-<div posts-controller class="well" id="userwall-container">
-    <h1>News feed:</h1>
-    <h2>aaaa</h2>
-    <div infinite-scroll="getUserWall()">
-        <ul class="media-list">
-            <div post-template></div>
-        </ul>
+<main user-wall-controller ng-init="getWallOwnerData()">
+    <div user-wall-header></div>
+
+    <div posts-controller class="well" id="userwall-container">
+        <div infinite-scroll="getUserWall()">
+            <ul class="media-list">
+                <div post-template></div>
+            </ul>
+        </div>
     </div>
-</div>
+</main>

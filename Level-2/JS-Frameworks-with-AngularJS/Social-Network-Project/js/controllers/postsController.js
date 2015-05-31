@@ -42,9 +42,6 @@ app.controller(
 
                 usSpinnerService.spin('spinner-1');
                 var username = $routeParams['username'];
-                //username.replace('&20', ' ');
-                console.log(username);
-
 
                 postsData.getUserWall(getAuthenticationHeaders(), username, startPostId, PAGE_SIZE)
                     .$promise

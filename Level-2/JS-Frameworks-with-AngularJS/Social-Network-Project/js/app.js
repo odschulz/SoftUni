@@ -73,6 +73,10 @@ app.config(['$routeProvider',
                     }
                 }
             })
+            .when('/not-found/', {
+                templateUrl: 'templates/not-found.html',
+                controller: 'MainController'
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -29,9 +29,24 @@ app.factory('friendData', ['$resource', 'BASE_SERVICE_URL',function ($resource, 
             .get();
     }
 
+    function sendFriendRequest(authenticationHeaders, username) {
+
+        return $resource(
+            BASE_SERVICE_URL + 'me/requests/' + username,
+            null,
+            {
+                'post': {
+                    method: 'POST',
+                    headers: authenticationHeaders
+                }
+            })
+            .post();
+    }
+
     return {
         getMyFriendsPreviewData: getMyFriendsPreviewData,
-        getMyFriendsList: getMyFriendsList
+        getMyFriendsList: getMyFriendsList,
+        sendFriendRequest: sendFriendRequest
     }
 }]);
 

@@ -77,6 +77,20 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
             .get();
     }
 
+    function getUserFullData(authenticationHeaders, username) {
+
+        return $resource(
+            BASE_SERVICE_URL + 'users/' + username,
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
     function searchForUsers(authenticationHeaders, searchPhrase) {
         return $resource(
             BASE_SERVICE_URL + 'users/search?searchTerm=' + searchPhrase,
@@ -127,6 +141,7 @@ app.factory('userData', ['$resource', 'BASE_SERVICE_URL',function ($resource, BA
         changePassword: changePassword,
         editProfile: editProfile,
         getUserPreviewData: getUserPreviewData,
+        getUserFullData: getUserFullData,
         searchForUsers: searchForUsers
     }
 }]);

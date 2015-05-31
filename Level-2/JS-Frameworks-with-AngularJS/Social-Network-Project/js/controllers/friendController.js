@@ -45,9 +45,24 @@ app.controller(
                         $scope.friendsData.totalCount = data.length;
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
-                        Notification.error({message: 'Could not retriece friends data!', delay: 4000});
+                        Notification.error({message: 'Could not retrieve friends data!', delay: 4000});
                         console.log(error);
                     });
+            };
+
+            $scope.sendFriendRequest = function (username) {
+                friendData.sendFriendRequest(getAuthenticationHeaders(), username)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.success({message: 'Friend request successfully sent!', delay: 4000});
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not retrieve friends data!', delay: 4000});
+                        console.log(error);
+                    });
+
+                
             };
 
             function getAuthenticationHeaders() {
