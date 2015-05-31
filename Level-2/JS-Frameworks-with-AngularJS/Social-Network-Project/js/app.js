@@ -40,6 +40,17 @@ app.config(['$routeProvider',
                     }
                 }
             })
+            .when('/requests/', {
+                templateUrl: 'templates/friend-requests.html',
+                controller: 'MainController',
+                resolve: {
+                    authorized: function ($localStorage, $location) {
+                        if (!$localStorage.access_token) {
+                            $location.path('/');
+                        }
+                    }
+                }
+            })
             .when('/users/:username/friends/', {
                 templateUrl: 'templates/friends-list.html',
                 controller: 'MainController',

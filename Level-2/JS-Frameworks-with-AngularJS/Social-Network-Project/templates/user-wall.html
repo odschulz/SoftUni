@@ -3,11 +3,19 @@
 <main user-wall-controller ng-init="getWallOwnerData()">
     <div user-wall-header></div>
 
-    <div posts-controller class="well" id="userwall-container">
-        <div infinite-scroll="getUserWall()">
-            <ul class="media-list">
-                <div post-template></div>
-            </ul>
+    <div ng-if="relationshipWithUser.isFriend || isOwnWall" user-wall-comment-box></div>
+
+    <div class="col-md-3 col-md-push-9" ng-if="!isOwnWall && relationshipWithUser.isFriend" friends-preview ng-init="getGetFriendsOfFriendPreviewData()"></div>
+    <div class="col-md-3 col-md-push-9" ng-if="isOwnWall" friends-preview ng-init="getMyFriendsPreviewData()"></div>
+
+    <div ng-if="relationshipWithUser.isFriend || isOwnWall" class="col-md-9 col-md-pull-3">
+        <div posts-controller class="well" id="userwall-container">
+            <div infinite-scroll="getUserWall()">
+                <ul class="media-list">
+                    <div post-template></div>
+                </ul>
+            </div>
         </div>
     </div>
+
 </main>

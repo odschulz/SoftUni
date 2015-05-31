@@ -111,6 +111,45 @@ app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', function ($resource, 
             .del();
     }
 
+    function addNewPost(authenticationHeaders, data) {
+        return $resource(
+            BASE_SERVICE_URL + '/posts',
+            null,
+            {
+                'post': {
+                    method: 'POST',
+                    headers: authenticationHeaders
+                }
+            })
+            .post(data);
+    }
+
+    function editPostById(authenticationHeaders, id, data) {
+        return $resource(
+            BASE_SERVICE_URL + '/Posts/' + id,
+            null,
+            {
+                'put': {
+                    method: 'PUT',
+                    headers: authenticationHeaders
+                }
+            })
+            .put(data);
+    }
+
+    function deletePostById(authenticationHeaders, id) {
+        return $resource(
+            BASE_SERVICE_URL + '/Posts/' + id,
+            null,
+            {
+                'del': {
+                    method: 'DELETE',
+                    headers: authenticationHeaders
+                }
+            })
+            .del();
+    }
+
 
     return {
         getNewsFeed: getNewsFeed,
@@ -120,7 +159,10 @@ app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', function ($resource, 
         likePost: likePost,
         unLikePost: unLikePost,
         likeComment: likeComment,
-        unlikeComment: unlikeComment
+        unlikeComment: unlikeComment,
+        addNewPost: addNewPost,
+        editPostById: editPostById,
+        deletePostById: deletePostById
     }
 }]);
 

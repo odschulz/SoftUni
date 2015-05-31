@@ -1,0 +1,23 @@
+<header user-header></header>
+
+<main friend-controller ng-init="getFriendRequests()" class="container">
+    <div class="well">
+        <div class="row" >
+            <h1>Friend request: {{pendingRequests.length}}</h1>
+            <div class="col-sm-5 col-md-3" ng-repeat="request in pendingRequests">
+                <div class="thumbnail">
+                    <img ng-src="{{request.user.profileImageData}}" default-image="{{defaultImage}}" alt="profile picture" style="width: 150px; height: 150px"/>
+                    <div class="caption">
+                        <h3 id="thumbnail-label">
+                            <a href="#/users/{{request.user.username}}/"><span>{{request.user.name}}</span></a>
+                        </h3>
+                        <p>
+                            <button ng-click="rejectFriendRequest(request)" class="btn btn-primary" role="button">Reject</button>
+                            <button ng-click="approveFriendRequest(request)" class="btn btn-info" role="button">Accept</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

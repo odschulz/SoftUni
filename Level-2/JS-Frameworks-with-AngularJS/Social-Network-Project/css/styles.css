@@ -73,6 +73,13 @@ body {
     height: 50px;
 }
 
+#request-notification {
+    color: tomato;
+    position: absolute;
+    top: 50%;
+    left: 35px;
+}
+
 #edit-profile-submit-group {
     background-color: transparent;
     border: none;
@@ -222,4 +229,30 @@ ul > li {
 #user-wall-profile-image {
     max-width: 125px;
     max-height: 125px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.user-preview-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+#wall-post-input {
+    width: 100%;
+    min-height: 50px;
+}
+
+.post-caret {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 17px;
+    cursor: pointer;
+    color: lightgray;
 }

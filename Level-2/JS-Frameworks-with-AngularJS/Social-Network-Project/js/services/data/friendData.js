@@ -29,6 +29,20 @@ app.factory('friendData', ['$resource', 'BASE_SERVICE_URL',function ($resource, 
             .get();
     }
 
+    function getGetFriendsOfFriendPreviewData(authenticationHeaders, username) {
+
+        return $resource(
+            BASE_SERVICE_URL + 'users/' + username + '/friends/preview',
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
     function sendFriendRequest(authenticationHeaders, username) {
 
         return $resource(
@@ -43,10 +57,56 @@ app.factory('friendData', ['$resource', 'BASE_SERVICE_URL',function ($resource, 
             .post();
     }
 
+    function getFriendRequests(authenticationHeaders) {
+        return $resource(
+            BASE_SERVICE_URL + 'me/requests',
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    isArray: true,
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
+    function approveFriendRequest(authenticationHeaders, requestId) {
+        //me/requests/2?status=approved
+        return $resource(
+            BASE_SERVICE_URL + 'me/requests/' + requestId + '?status=approved',
+            null,
+            {
+                'put': {
+                    method: 'PUT',
+                    headers: authenticationHeaders
+                }
+            })
+            .put();
+    }
+
+    function rejectFriendRequest(authenticationHeaders, requestId) {
+        //me/requests/2?status=approved
+        return $resource(
+            BASE_SERVICE_URL + 'me/requests/' + requestId + '?status=rejected',
+            null,
+            {
+                'put': {
+                    method: 'PUT',
+                    headers: authenticationHeaders
+                }
+            })
+            .put();
+    }
+
     return {
         getMyFriendsPreviewData: getMyFriendsPreviewData,
         getMyFriendsList: getMyFriendsList,
-        sendFriendRequest: sendFriendRequest
+        getGetFriendsOfFriendPreviewData: getGetFriendsOfFriendPreviewData,
+        sendFriendRequest: sendFriendRequest,
+        getFriendRequests: getFriendRequests,
+        approveFriendRequest: approveFriendRequest,
+        rejectFriendRequest: rejectFriendRequest
     }
 }]);
 

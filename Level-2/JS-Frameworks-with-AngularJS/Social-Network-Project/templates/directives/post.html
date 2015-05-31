@@ -6,15 +6,35 @@
                      class="media-object post-author-image" alt="Profile Image">
             </a>
         </div>
-        <div class="media-body">
+        <div class="media-body position-relative">
             <h4 class="media-heading post-header">
-                <a href="#/users/{{post.author.username}}" >{{post.author.name}}</a>
-                <span ng-if="isOwnWall">posted on
-                    <a href="#/users/{{post.wallOwner.username}}">{{post.wallOwner.name}}</a>'s wall
+                <a href="#/users/{{post.author.username}}">{{post.author.name}}</a>
+                <span class="position-relative"><div user-preview ng-if='!userPreviewShown === post.author.username'></div></span>
+                <span ng-if="!isOwnWall">posted on
+                    <a href="#/users/{{post.author.username}}">{{post.wallOwner.name}}</a>'s wall
+                    <span class="position-relative"><div user-preview ng-if='userPreviewShown === post.wallOwner.username'></div></span>
                 </span>
             </h4>
             <div class="post-date">{{post.date | date: "HH:mm, dd MMM, yy"}}</div>
-            <p>{{post.postContent}}</p>
+            <!--edit----and-----delete-------->
+            <div ng-if="isOwnWall" class="btn-group drop-down post-caret" role="group">
+                <span type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="fa fa-chevron-down drop-down-post-caret"></span>
+                </span>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li ng-if="post.author.username === me.username" ng-click="post.isBeingEdited = true; post.postEditedContent = post.postContent"><a>Edit</a></li>
+                    <li ng-if="post.author.username === me.username || isOwnWall"><a ng-click="deletePost(post)">Delete</a></li>
+                </ul>
+            </div>
+            <p ng-if="!post.isBeingEdited">{{post.postContent}}</p>
+            <form ng-if="post.isBeingEdited" class="form-horizontal" ng-submit="editPostById(post)" name="editPostForm">
+                <div class="add-comment-container">
+                    <textarea ng-model="post.postEditedContent" ng-minlength="1" placeholder="Post to wall" id="wall-post-input" required></textarea>
+                    <button ng-click="post.isBeingEdited = false;" class="btn btn-warning">Cancel</button>
+                    <button ng-disabled="editPostForm.$invalid" class="btn btn-info">Add</button>
+                </div>
+            </form>
+            <!--edit----and-----delete-------->
             <div>
                 <a href="" ng-if="!post.liked" ng-click="likePost(post)">Like</a>
                 <a href="" ng-if="post.liked" ng-click="unlikePost(post)">Unlike</a>
@@ -27,7 +47,7 @@
                     <div class="add-comment-container">
                         <img ng-src="{{me.profileImage}}" default-image="{{defaultImage}}" alt="Profile image"
                              class="add-comment-image"/>
-                        <textarea ng-model="newComment[post.id]" class="comment-input"></textarea>
+                        <textarea ng-model="newComment[post.id]"  ng-minlength="1" class="comment-input"></textarea>
                         <button class="add-comment-button">Add</button>
                     </div>
                 </form>

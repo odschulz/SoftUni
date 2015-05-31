@@ -1,0 +1,12 @@
+<div>
+    <div ng-if="relationshipWithUser.isFriend" class="btn btn-success" disabled>
+            <span>Friends</span>
+        </div>
+        <div ng-if="relationshipWithUser.hasPendingRequest && wallOwner.username != me.username" class="btn btn-warning" disabled>
+            <span>Pending</span>
+        </div>
+        <div ng-if="relationshipWithUser.isNotFriend && !relationshipWithUser.hasPendingRequest" friend-controller ng-click="sendFriendRequest(wallOwner.username)"
+             class="btn btn-danger">
+            <span>Add Friend</span>
+    </div>
+</div>

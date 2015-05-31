@@ -185,6 +185,64 @@ app.controller(
                     });
             };
 
+            $scope.addNewPost = function () {
+                var postData = {};
+                postData.postContent = $scope.newPostContent;
+                postData.username = $routeParams['username'];
+
+                postsData.addNewPost(getAuthenticationHeaders(), postData)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+                        $scope.newPostContent = '';
+                        $route.reload();
+
+                        Notification.success({message: 'Post added!', delay: 2000});
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not add post!', delay: 4000});
+                        console.log(error);
+                    });
+
+            };
+
+            $scope.editPostById = function (post) {
+                var data = {};
+                data.postContent = post.postEditedContent;
+
+                postsData.editPostById(getAuthenticationHeaders(), post.id, data)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+                        post.postContent = data.content;
+                        post.isBeingEdited = false;
+
+                        Notification.success({message: 'Post edited!', delay: 2000});
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not edit post!', delay: 4000});
+                        console.log(error);
+                    });
+
+            };
+
+            $scope.deletePostById = function (post) {
+
+                postsData.editPostById(getAuthenticationHeaders(), post.id)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+                        $route.reload();
+
+                        Notification.success({message: 'Post deleted!', delay: 2000});
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not delete post!', delay: 4000});
+                        console.log(error);
+                    });
+
+            };
+
             function getAuthenticationHeaders() {
                 return authentication.getHeaders();
             }

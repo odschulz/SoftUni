@@ -15,8 +15,10 @@ app.controller(
                 userData.getUserFullData(getAuthenticationHeaders(), wallOwnerUsername)
                     .$promise
                     .then(function (data) {
-                        console.log(data);
                         $scope.wallOwner = data;
+                        $scope.relationshipWithUser.isFriend = data.isFriend;
+                        $scope.relationshipWithUser.hasPendingRequest = data.hasPendingRequest;
+
                         if (wallOwnerUsername === $scope.me.username) {
                             $scope.wallOwner.isMe = true;
                         } else {
@@ -24,7 +26,7 @@ app.controller(
                         }
 
                         if (!$scope.wallOwner.isMe) {
-                            $scope.wallOwner.isNotFriend = !$scope.wallOwner.hasPendingRequest && !$scope.wallOwner.isFriend ;
+                            $scope.relationshipWithUser.isNotFriend = !$scope.wallOwner.hasPendingRequest && !$scope.wallOwner.isFriend ;
                         }
 
 

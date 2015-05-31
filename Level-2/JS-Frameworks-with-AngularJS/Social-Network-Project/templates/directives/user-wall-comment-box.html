@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <form user-controller class="form-horizontal" ng-submit="addNewPost()" name="postForm">
+                <div class="add-comment-container">
+                    <textarea ng-model="newPostContent" ng-minlength="1" placeholder="Post to wall" id="wall-post-input" required></textarea>
+                    <button ng-disabled="postForm.$invalid" class="btn btn-info">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
