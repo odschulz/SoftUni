@@ -43,6 +43,21 @@ app.factory('friendData', ['$resource', 'BASE_SERVICE_URL',function ($resource, 
             .get();
     }
 
+    function getFriendsOfFriendDetailedList(authenticationHeaders, username) {
+
+        return $resource(
+            BASE_SERVICE_URL + 'users/' + username + '/friends',
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    isArray: true,
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
     function sendFriendRequest(authenticationHeaders, username) {
 
         return $resource(
@@ -103,6 +118,7 @@ app.factory('friendData', ['$resource', 'BASE_SERVICE_URL',function ($resource, 
         getMyFriendsPreviewData: getMyFriendsPreviewData,
         getMyFriendsList: getMyFriendsList,
         getGetFriendsOfFriendPreviewData: getGetFriendsOfFriendPreviewData,
+        getFriendsOfFriendDetailedList: getFriendsOfFriendDetailedList,
         sendFriendRequest: sendFriendRequest,
         getFriendRequests: getFriendRequests,
         approveFriendRequest: approveFriendRequest,

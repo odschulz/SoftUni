@@ -15,6 +15,7 @@ app.controller(
         function ($scope, $location, $timeout, $interval, $routeParams, authentication, Notification, friendData, userData, usSpinnerService, FRIENDS_PREVIEW_COUNT) {
 
             $scope.pendingRequests = [];
+            $scope.currentUser = $routeParams['username'];
 
             $scope.getFriendRequests = function () {
                 friendData.getFriendRequests(getAuthenticationHeaders())
@@ -36,6 +37,7 @@ app.controller(
 
             $scope.getMyFriendsPreviewData = function () {
                 usSpinnerService.spin('spinner-1');
+                $scope.friendsOwner = $routeParams['username'];
 
                 friendData.getMyFriendsPreviewData(getAuthenticationHeaders())
                     .$promise
@@ -92,6 +94,22 @@ app.controller(
 
                         friendsPreviewData.totalCount = data.totalCount;
                         $scope.friendsPreviewData = friendsPreviewData;
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not retrieve friends data!', delay: 4000});
+                        console.log(error);
+                    });
+            };
+
+            $scope.getFriendsOfFriendDetailedList = function () {
+                var username = $routeParams['username'];
+                friendData.getFriendsOfFriendDetailedList(getAuthenticationHeaders(), username)
+                    .$promise
+                    .then(function (data) {
+                        usSpinnerService.stop('spinner-1');
+
+                        $scope.friendsData = data;
+                        $scope.friendsData.totalCount = data.length;
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
                         Notification.error({message: 'Could not retrieve friends data!', delay: 4000});

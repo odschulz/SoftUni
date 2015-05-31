@@ -1,6 +1,34 @@
 <header user-header></header>
 
-<div class="container" friend-controller="" ng-init="getMyFriendsList()">
+<div class="container" ng-if="currentUser === me.username" friend-controller ng-init="getMyFriendsList()">
+    <div class="row">
+        <div class="well">
+            <form class="form-horizontal" name="editPasswordForm">
+                <fieldset>
+                    <legend>Friends: {{friendsData.totalCount}}</legend>
+                    <div class="form-group">
+                        <label for="friendFilter" class="col-lg-2 control-label">Filter by name: </label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="friendFilter" ng-model="friendFilter.name"
+                                   name="friendFilter">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="row">
+                <div ng-repeat="friend in friendsData | filter: friendFilter" class="col-lg-3 col-md-4 col-xs-6">
+                    <a href="#/users/{{friend.username}}/">
+                        <img ng-src="{{friend.profileImageData}}" default-image="{{defaultImage}}"
+                             alt="Profile image" class="img-responsive"/>
+                        <h3 class="friend-list-name">{{friend.name}}</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-if="currentUser !== me.username" friend-controller ng-init="getFriendsOfFriendDetailedList()">
     <div class="row">
         <div class="well">
             <form class="form-horizontal" name="editPasswordForm">

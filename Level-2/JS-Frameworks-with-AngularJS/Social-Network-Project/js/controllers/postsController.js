@@ -32,7 +32,6 @@ app.controller(
                         }
 
                         usSpinnerService.stop('spinner-1');
-                        console.log(data);
                         
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
