@@ -81,7 +81,8 @@
                         <a href=""
                            ng-if="!comment.liked && (friendsRepo.names.indexOf(comment.author.username) > -1 || comment.author.username === me.username)"
                            ng-click="likeComment(post, comment)">Like</a>
-                        <a href="" ng-if="comment.liked" ng-click="unlikeComment(post, comment)">Unlike</a>
+                        <a href="" ng-if="comment.liked && (friendsRepo.names.indexOf(comment.author.username) > -1 || comment.author.username === me.username)"
+                           ng-click="unlikeComment(post, comment)">Unlike</a>
                         <span class="fa fa-thumbs-o-up"></span>
                         <span>{{comment.likesCount}}</span>
                         <hr class="no-top-margin no-bottom-margin"/>
