@@ -21,6 +21,7 @@ app.controller(
 
             $scope.getNewsFeed = function () {
                 usSpinnerService.spin('spinner-1');
+                
 
                 postsData.getNewsFeed(getAuthenticationHeaders(), startPostId, PAGE_SIZE)
                     .$promise
@@ -31,6 +32,8 @@ app.controller(
                         }
 
                         usSpinnerService.stop('spinner-1');
+                        console.log(data);
+                        
                     }, function (error) {
                         usSpinnerService.stop('spinner-1');
                         Notification.error({message: 'Could not retrieve news feed!', delay: 4000});

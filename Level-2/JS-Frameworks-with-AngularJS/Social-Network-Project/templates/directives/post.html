@@ -43,7 +43,7 @@
             </div>
             <hr class="no-top-margin"/>
             <div>
-                <form user-controller class="form-horizontal" ng-submit="addCommentToPost(post)" name="commentForm">
+                <form ng-if="post.author.isFriend" user-controller class="form-horizontal" ng-submit="addCommentToPost(post)" name="commentForm">
                     <div class="add-comment-container">
                         <img ng-src="{{me.profileImage}}" default-image="{{defaultImage}}" alt="Profile image"
                              class="add-comment-image"/>
