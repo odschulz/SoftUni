@@ -23,7 +23,7 @@
                 </span>
                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
                     <li ng-if="post.author.username === me.username" ng-click="post.isBeingEdited = true; post.postEditedContent = post.postContent"><a>Edit</a></li>
-                    <li ng-if="post.author.username === me.username || isOwnWall"><a ng-click="deletePost(post)">Delete</a></li>
+                    <li ng-if="post.author.username === me.username || isOwnWall"><a ng-click="deletePostById(post)">Delete</a></li>
                 </ul>
             </div>
             <p ng-if="!post.isBeingEdited">{{post.postContent}}</p>

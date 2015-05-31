@@ -228,18 +228,20 @@ app.controller(
 
             $scope.deletePostById = function (post) {
 
-                postsData.editPostById(getAuthenticationHeaders(), post.id)
-                    .$promise
-                    .then(function (data) {
-                        usSpinnerService.stop('spinner-1');
-                        $route.reload();
+                if (confirm('Are you sure you want to delete this post?')) {
+                    postsData.deletePostById(getAuthenticationHeaders(), post.id)
+                        .$promise
+                        .then(function (data) {
+                            usSpinnerService.stop('spinner-1');
+                            $route.reload();
 
-                        Notification.success({message: 'Post deleted!', delay: 2000});
-                    }, function (error) {
-                        usSpinnerService.stop('spinner-1');
-                        Notification.error({message: 'Could not delete post!', delay: 4000});
-                        console.log(error);
-                    });
+                            Notification.success({message: 'Post deleted!', delay: 2000});
+                        }, function (error) {
+                            usSpinnerService.stop('spinner-1');
+                            Notification.error({message: 'Could not delete post!', delay: 4000});
+                            console.log(error);
+                        });
+                }
 
             };
 
