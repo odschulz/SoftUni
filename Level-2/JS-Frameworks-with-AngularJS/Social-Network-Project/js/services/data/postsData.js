@@ -16,6 +16,20 @@ app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', function ($resource, 
             .get();
     }
 
+    function getUserWall(authenticationHeaders, username, startPostId, pageSize) {
+        return $resource(
+            BASE_SERVICE_URL + '/users/' + username + '/wall?StartPostId=' + startPostId + '&PageSize=' + pageSize,
+            null,
+            {
+                'get': {
+                    method: 'GET',
+                    isArray: true,
+                    headers: authenticationHeaders
+                }
+            })
+            .get();
+    }
+
     function addCommentToPost(authenticationHeaders, postId, comment) {
 
         return $resource(
@@ -100,6 +114,7 @@ app.factory('postsData', ['$resource', 'BASE_SERVICE_URL', function ($resource, 
 
     return {
         getNewsFeed: getNewsFeed,
+        getUserWall: getUserWall,
         addCommentToPost : addCommentToPost,
         getPostComments: getPostComments,
         likePost: likePost,

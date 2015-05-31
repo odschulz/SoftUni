@@ -5,17 +5,19 @@ app.controller(
         '$location',
         '$timeout',
         '$route',
+        '$routeParams',
         'authentication',
         'Notification',
         'PAGE_SIZE',
         'postsData',
         'userData',
         'usSpinnerService',
-        function ($scope, $location, $timeout, $route, authentication, Notification, PAGE_SIZE, postsData, userData, usSpinnerService) {
+        function ($scope, $location, $timeout, $route, $routeParams, authentication, Notification, PAGE_SIZE, postsData, userData, usSpinnerService) {
 
             var startPostId = '';
             $scope.commentsViews = [];
-            $scope.posts = [    ];
+            $scope.posts = [];
+            $scope.newComment = {};
 
             $scope.getNewsFeed = function () {
                 usSpinnerService.spin('spinner-1');
@@ -36,7 +38,29 @@ app.controller(
                     });
             };
 
-            $scope.newComment = {};
+            $scope.getUserWall = function () {
+
+                usSpinnerService.spin('spinner-1');
+                var username = $routeParams['username'];
+                //username.replace('&20', ' ');
+                console.log(username);
+
+
+                postsData.getUserWall(getAuthenticationHeaders(), username, startPostId, PAGE_SIZE)
+                    .$promise
+                    .then(function (data) {
+                        $scope.posts = $scope.posts.concat(data);
+                        if($scope.posts.length > 0){
+                            startPostId = $scope.posts[$scope.posts.length - 1].id;
+                        }
+
+                        usSpinnerService.stop('spinner-1');
+                    }, function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        Notification.error({message: 'Could not retrieve user wall!', delay: 4000});
+                        console.log(error);
+                    });
+            };
 
             $scope.addCommentToPost = function (post) {
                 var newComment = {};
@@ -89,7 +113,6 @@ app.controller(
                         Notification.error({message: 'Could not get all comment for post!', delay: 4000});
                         console.log(error);
                     });
-
             };
 
 

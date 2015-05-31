@@ -2,9 +2,10 @@ app.controller(
     'MainController',
     [
         '$scope',
+        '$routeParams',
         'authentication',
         'DEFAULT_IMAGE',
-        function ($scope, authentication, DEFAULT_IMAGE) {
+        function ($scope, $routeParams, authentication, DEFAULT_IMAGE) {
 
             $scope.isLogged = function () {
                 return authentication.isLogged();
@@ -13,4 +14,5 @@ app.controller(
             $scope.me = {};
             $scope.me.username = authentication.getUsername();
             $scope.defaultImage = DEFAULT_IMAGE;
+            $scope.isOwnWall = $scope.me.username === $routeParams['username'];
         }]);
