@@ -256,3 +256,10 @@ ul > li {
     cursor: pointer;
     color: lightgray;
 }
+
+.user-wall-username {
+    background-color: white;
+    padding: 3px;
+    font-size: 34px;
+    font-weight: bold;
+}

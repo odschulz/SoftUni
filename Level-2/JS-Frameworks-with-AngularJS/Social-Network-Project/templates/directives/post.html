@@ -36,8 +36,8 @@
             </form>
             <!--edit----and-----delete-------->
             <div>
-                <a href="" ng-if="!post.liked && post.author.isFriend" ng-click="likePost(post)">Like</a>
-                <a href="" ng-if="post.liked && post.author.isFriend" ng-click="unlikePost(post)">Unlike</a>
+                <a href="" ng-if="!post.liked && (post.author.isFriend || post.author.username === me.username)" ng-click="likePost(post)">Like</a>
+                <a href="" ng-if="post.liked && (post.author.isFriend || post.author.username === me.username)" ng-click="unlikePost(post)">Unlike</a>
                 <span class="fa fa-thumbs-o-up"></span>
                 <span>{{post.likesCount}}</span>
             </div>
@@ -78,8 +78,8 @@
                     <div class="comment-date">{{comment.date | date: "HH:mm, dd MMM, yy"}}</div>
                     <p>{{comment.commentContent}}</p>
                     <div>
-                        <a href="" ng-if="!comment.liked && comment.author.isFriend" ng-click="likeComment(post, comment)">Like</a>
-                        <a href="" ng-if="comment.liked && comment.author.isFriend" ng-click="unlikeComment(post, comment)">Unlike</a>
+                        <a href="" ng-if="!comment.liked" ng-click="likeComment(post, comment)">Like</a>
+                        <a href="" ng-if="comment.liked" ng-click="unlikeComment(post, comment)">Unlike</a>
                         <span class="fa fa-thumbs-o-up"></span>
                         <span>{{comment.likesCount}}</span>
                         <hr class="no-top-margin no-bottom-margin"/>

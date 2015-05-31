@@ -36,6 +36,7 @@ app.controller(
             $scope.$on('$destroy', function () { $interval.cancel(interval); });
 
             $scope.getMyFriendsPreviewData = function () {
+                $scope.currentUser = $scope.currentUser || $scope.me.username;
                 usSpinnerService.spin('spinner-1');
                 $scope.friendsOwner = $routeParams['username'];
 
